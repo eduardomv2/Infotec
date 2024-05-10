@@ -49,7 +49,7 @@ namespace Proyecto_Infotec
                             string storedPassword = reader["Contraseña"].ToString();
                             if (storedPassword == contraseña)  // Compara contraseñas
                             {
-                                MessageBox.Show("Acceso concedido.");  // Éxito
+                                MessageBox.Show("Acceso concedido.");  
                             }
                             else
                             {
