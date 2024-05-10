@@ -53,7 +53,7 @@ namespace Proyecto_Infotec
                             }
                             else
                             {
-                                MessageBox.Show("Contraseña incorrecta.");  // Fallo
+                                MessageBox.Show("Contraseña incorrecta.");  
                             }
                         }
                         else
