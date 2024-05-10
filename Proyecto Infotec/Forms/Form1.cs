@@ -70,7 +70,6 @@ namespace Proyecto_Infotec
 
         }
         
-
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             //close this form
