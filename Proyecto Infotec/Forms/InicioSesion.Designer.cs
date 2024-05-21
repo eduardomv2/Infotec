@@ -41,6 +41,7 @@
             this.comboBoxCarrera = new System.Windows.Forms.ComboBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.SuspendLayout();
             // 
             // label1
@@ -159,12 +160,26 @@
             this.label6.TabIndex = 16;
             this.label6.Text = "USUARIO";
             // 
+            // iconButton2
+            // 
+            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconButton2.IconColor = System.Drawing.Color.Black;
+            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton2.Location = new System.Drawing.Point(317, 551);
+            this.iconButton2.Name = "iconButton2";
+            this.iconButton2.Size = new System.Drawing.Size(75, 23);
+            this.iconButton2.TabIndex = 17;
+            this.iconButton2.Text = "iconButton2";
+            this.iconButton2.UseVisualStyleBackColor = true;
+            this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
+            // 
             // InicioSesion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(509, 586);
+            this.Controls.Add(this.iconButton2);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.comboBoxCarrera);
@@ -179,6 +194,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "InicioSesion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InicioSesion";
             this.Load += new System.EventHandler(this.InicioSesion_Load);
             this.ResumeLayout(false);
@@ -201,5 +217,6 @@
         private System.Windows.Forms.ComboBox comboBoxCarrera;
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.Label label6;
+        private FontAwesome.Sharp.IconButton iconButton2;
     }
 }

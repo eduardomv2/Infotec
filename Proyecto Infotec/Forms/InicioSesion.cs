@@ -115,6 +115,15 @@ namespace Proyecto_Infotec.Forms
                 MessageBox.Show($"Error al conectar con la base de datos: {ex.Message}");
             }
         }
+
+        private void iconButton2_Click(object sender, EventArgs e)
+        {
+            //back to login form
+            this.Hide();
+            Form1 f1 = new Form1();
+            f1.Show();
+            
+        }
     }
 } 
 
