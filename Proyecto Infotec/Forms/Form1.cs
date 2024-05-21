@@ -1,9 +1,6 @@
 ﻿using Proyecto_Infotec.Forms;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-
 using System.Configuration;
 using System.Windows.Forms;
 using System.Data.SqlClient;
@@ -12,6 +9,8 @@ namespace Proyecto_Infotec
 {
     public partial class Form1 : Form
     {
+        // Variable global para guardar el nombre de usuario
+        public static string LoggedInUser;
         public Form1()
         {
             InitializeComponent();
@@ -32,6 +31,7 @@ namespace Proyecto_Infotec
                 MessageBox.Show("Por favor, ingrese usuario y contraseña.");
                 return;
             }
+            
 
             // Conexión a la base de datos
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -53,8 +53,11 @@ namespace Proyecto_Infotec
                         if (reader.Read())  // Si se encontró el usuario
                         {
                             string storedPassword = reader["Contraseña"].ToString();
-                            // Mensaje de depuración
 
+                            // Guardar el nombre de usuario en la variable global
+                            LoggedInUser = usuario;
+
+                            // Mensaje de depuración
                             //MOSTRAR CONTRASEÑA DEL USUARIO INGRESADO POR SI SE OLVIDA
                             //MessageBox.Show($"Contraseña en la base de datos: '{storedPassword}'");
 
@@ -84,7 +87,8 @@ namespace Proyecto_Infotec
                 }
             }
         }
-        
+
+       
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             //close this form

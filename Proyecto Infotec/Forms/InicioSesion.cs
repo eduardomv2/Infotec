@@ -56,6 +56,13 @@ namespace Proyecto_Infotec.Forms
                 return;
             }
 
+            // Verificar si el usuario ya existe en la base de datos
+            if (!VerificarUsuarioUnico(usuario))
+            {
+                MessageBox.Show("El nombre de usuario ya está en uso. Por favor, elija otro.");
+                return;
+            }
+
             // Validar que las contraseñas coincidan
             if (contraseña != confirmarContraseña)
             {
@@ -100,7 +107,7 @@ namespace Proyecto_Infotec.Forms
                             PasswordConfirmTxt.Clear();
                             // Redirigir a la ventana de inicio de sesión
                             this.Hide();
-                            Form1 f1 = new Form1();  
+                            Form1 f1 = new Form1();
                             f1.Show();
                         }
                         else
@@ -114,7 +121,26 @@ namespace Proyecto_Infotec.Forms
             {
                 MessageBox.Show($"Error al conectar con la base de datos: {ex.Message}");
             }
+        } 
+
+        // Método para verificar si el usuario es único en la base de datos
+        private bool VerificarUsuarioUnico(string usuario)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["Proyecto_Infotec.Properties.Settings.InfoTecConnectionString"].ConnectionString;
+            string query = "SELECT COUNT(*) FROM Login WHERE LTRIM(RTRIM(Usuario)) = @Usuario";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Usuario", usuario);
+                    connection.Open();
+                    int count = (int)command.ExecuteScalar();
+                    return count == 0; // Devuelve true si el usuario es único, false si ya existe
+                }
+            }
         }
+
 
         private void iconButton2_Click(object sender, EventArgs e)
         {

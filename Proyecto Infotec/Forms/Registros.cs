@@ -25,11 +25,12 @@ namespace Proyecto_Infotec
         {
             InitializeComponent();
         }
-
+        #region Pannel
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
 
         }
+        #endregion
 
         private void Registros_Load(object sender, EventArgs e)
         {
@@ -138,6 +139,13 @@ namespace Proyecto_Infotec
             }
 
             return usuarios;
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            //open form user
+            User f2 = new User();
+            f2.Show();
         }
     }
     
