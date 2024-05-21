@@ -86,7 +86,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(42, 233);
+            this.label5.Location = new System.Drawing.Point(42, 290);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(352, 13);
             this.label5.TabIndex = 4;
@@ -95,7 +95,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(38, 342);
+            this.label6.Location = new System.Drawing.Point(38, 401);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(168, 13);
             this.label6.TabIndex = 5;
@@ -124,7 +124,7 @@
             // 
             // txtProblemasTexto
             // 
-            this.txtProblemasTexto.Location = new System.Drawing.Point(41, 257);
+            this.txtProblemasTexto.Location = new System.Drawing.Point(41, 316);
             this.txtProblemasTexto.Multiline = true;
             this.txtProblemasTexto.Name = "txtProblemasTexto";
             this.txtProblemasTexto.Size = new System.Drawing.Size(566, 77);
@@ -132,7 +132,7 @@
             // 
             // txtSolucionRecomendacion
             // 
-            this.txtSolucionRecomendacion.Location = new System.Drawing.Point(40, 367);
+            this.txtSolucionRecomendacion.Location = new System.Drawing.Point(41, 428);
             this.txtSolucionRecomendacion.Multiline = true;
             this.txtSolucionRecomendacion.Name = "txtSolucionRecomendacion";
             this.txtSolucionRecomendacion.Size = new System.Drawing.Size(566, 114);
@@ -159,7 +159,7 @@
             this.btnGuardar.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnGuardar.IconColor = System.Drawing.Color.Black;
             this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnGuardar.Location = new System.Drawing.Point(575, 182);
+            this.btnGuardar.Location = new System.Drawing.Point(761, 476);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(83, 43);
             this.btnGuardar.TabIndex = 13;
@@ -178,23 +178,23 @@
             // 
             // dtpFechaEntrega
             // 
-            this.dtpFechaEntrega.Location = new System.Drawing.Point(472, 62);
+            this.dtpFechaEntrega.Location = new System.Drawing.Point(342, 240);
             this.dtpFechaEntrega.Name = "dtpFechaEntrega";
             this.dtpFechaEntrega.Size = new System.Drawing.Size(200, 20);
             this.dtpFechaEntrega.TabIndex = 15;
             // 
             // dtpFechaActual
             // 
-            this.dtpFechaActual.Location = new System.Drawing.Point(472, 25);
+            this.dtpFechaActual.Location = new System.Drawing.Point(96, 240);
             this.dtpFechaActual.Name = "dtpFechaActual";
-            this.dtpFechaActual.Size = new System.Drawing.Size(200, 20);
+            this.dtpFechaActual.Size = new System.Drawing.Size(194, 20);
             this.dtpFechaActual.TabIndex = 16;
             // 
             // NuevoRegistro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 501);
+            this.ClientSize = new System.Drawing.Size(966, 554);
             this.Controls.Add(this.dtpFechaActual);
             this.Controls.Add(this.dtpFechaEntrega);
             this.Controls.Add(this.lblLoggedInUser);

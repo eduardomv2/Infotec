@@ -12,6 +12,7 @@ using Newtonsoft.Json;
 using System.IO;
 using System.Configuration;
 using FontAwesome.Sharp;
+using System.Diagnostics;
 
 
 namespace Proyecto_Infotec
@@ -125,8 +126,15 @@ namespace Proyecto_Infotec
         }
         private void iconPictureBox1_Click(object sender, EventArgs e)
         {
-            
             OpenChildForm(new Inicio());
+            Reset();
+        }
+
+        private void Reset()
+        {
+            DisableButton();
+            leftBorderBtn.Visible = false;
+            
         }
 
         private void iconButton3_Click_1(object sender, EventArgs e)
@@ -147,6 +155,19 @@ namespace Proyecto_Infotec
             OpenChildForm(new MasEquiposAyudados());
         }
         #endregion
+
+        private void iconButton6_Click(object sender, EventArgs e)
+        {
+            // URL de la página web que quieres abrir
+            string url = "https://github.com/eduardomv2/Infotec";
+
+            // Abre la URL en el navegador predeterminado
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = url,
+                UseShellExecute = true
+            });
+        }
     }
 
 }
