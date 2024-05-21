@@ -147,6 +147,13 @@ namespace Proyecto_Infotec
             User f2 = new User();
             f2.Show();
         }
+
+        private void iconButton2_Click(object sender, EventArgs e)
+        {
+            //open form nuevo registro
+            NuevoRegistro f3 = new NuevoRegistro();
+            f3.Show();
+        }
     }
     
 }

@@ -34,11 +34,15 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtMatricula = new System.Windows.Forms.TextBox();
+            this.txtNumeroContacto = new System.Windows.Forms.TextBox();
+            this.txtProblemasTexto = new System.Windows.Forms.TextBox();
+            this.txtSolucionRecomendacion = new System.Windows.Forms.TextBox();
+            this.txtNombreModeloEquipo = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnGuardar = new FontAwesome.Sharp.IconButton();
+            this.lblLoggedInUser = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -80,7 +84,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(42, 190);
+            this.label5.Location = new System.Drawing.Point(42, 233);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(352, 13);
             this.label5.TabIndex = 4;
@@ -89,59 +93,101 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(38, 299);
+            this.label6.Location = new System.Drawing.Point(38, 342);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(168, 13);
             this.label6.TabIndex = 5;
             this.label6.Text = "SOLUCIÓN / RECOMENDACIÓN";
             // 
-            // textBox1
+            // txtNombre
             // 
-            this.textBox1.Location = new System.Drawing.Point(96, 65);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(287, 20);
-            this.textBox1.TabIndex = 6;
+            this.txtNombre.Location = new System.Drawing.Point(96, 65);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(287, 20);
+            this.txtNombre.TabIndex = 6;
             // 
-            // textBox2
+            // txtMatricula
             // 
-            this.textBox2.Location = new System.Drawing.Point(102, 105);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(156, 20);
-            this.textBox2.TabIndex = 7;
+            this.txtMatricula.Location = new System.Drawing.Point(102, 105);
+            this.txtMatricula.Name = "txtMatricula";
+            this.txtMatricula.Size = new System.Drawing.Size(156, 20);
+            this.txtMatricula.TabIndex = 7;
             // 
-            // textBox3
+            // txtNumeroContacto
             // 
-            this.textBox3.Location = new System.Drawing.Point(157, 149);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(287, 20);
-            this.textBox3.TabIndex = 8;
+            this.txtNumeroContacto.Location = new System.Drawing.Point(157, 149);
+            this.txtNumeroContacto.Name = "txtNumeroContacto";
+            this.txtNumeroContacto.Size = new System.Drawing.Size(287, 20);
+            this.txtNumeroContacto.TabIndex = 8;
             // 
-            // textBox4
+            // txtProblemasTexto
             // 
-            this.textBox4.Location = new System.Drawing.Point(41, 214);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(566, 77);
-            this.textBox4.TabIndex = 9;
+            this.txtProblemasTexto.Location = new System.Drawing.Point(41, 257);
+            this.txtProblemasTexto.Multiline = true;
+            this.txtProblemasTexto.Name = "txtProblemasTexto";
+            this.txtProblemasTexto.Size = new System.Drawing.Size(566, 77);
+            this.txtProblemasTexto.TabIndex = 9;
             // 
-            // textBox5
+            // txtSolucionRecomendacion
             // 
-            this.textBox5.Location = new System.Drawing.Point(40, 324);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(566, 96);
-            this.textBox5.TabIndex = 10;
+            this.txtSolucionRecomendacion.Location = new System.Drawing.Point(40, 367);
+            this.txtSolucionRecomendacion.Multiline = true;
+            this.txtSolucionRecomendacion.Name = "txtSolucionRecomendacion";
+            this.txtSolucionRecomendacion.Size = new System.Drawing.Size(566, 114);
+            this.txtSolucionRecomendacion.TabIndex = 10;
+            // 
+            // txtNombreModeloEquipo
+            // 
+            this.txtNombreModeloEquipo.Location = new System.Drawing.Point(204, 194);
+            this.txtNombreModeloEquipo.Name = "txtNombreModeloEquipo";
+            this.txtNombreModeloEquipo.Size = new System.Drawing.Size(287, 20);
+            this.txtNombreModeloEquipo.TabIndex = 12;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(43, 197);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(155, 13);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Nombre o Modelo del EQUIPO:";
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnGuardar.IconColor = System.Drawing.Color.Black;
+            this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnGuardar.Location = new System.Drawing.Point(575, 182);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(83, 43);
+            this.btnGuardar.TabIndex = 13;
+            this.btnGuardar.Text = "iconButton1";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // lblLoggedInUser
+            // 
+            this.lblLoggedInUser.AutoSize = true;
+            this.lblLoggedInUser.Location = new System.Drawing.Point(133, 25);
+            this.lblLoggedInUser.Name = "lblLoggedInUser";
+            this.lblLoggedInUser.Size = new System.Drawing.Size(35, 13);
+            this.lblLoggedInUser.TabIndex = 14;
+            this.lblLoggedInUser.Text = "label8";
             // 
             // NuevoRegistro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 443);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(684, 501);
+            this.Controls.Add(this.lblLoggedInUser);
+            this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.txtNombreModeloEquipo);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.txtSolucionRecomendacion);
+            this.Controls.Add(this.txtProblemasTexto);
+            this.Controls.Add(this.txtNumeroContacto);
+            this.Controls.Add(this.txtMatricula);
+            this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -150,6 +196,7 @@
             this.Controls.Add(this.label1);
             this.Name = "NuevoRegistro";
             this.Text = "NuevoRegistro";
+            this.Load += new System.EventHandler(this.NuevoRegistro_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -163,10 +210,14 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtMatricula;
+        private System.Windows.Forms.TextBox txtNumeroContacto;
+        private System.Windows.Forms.TextBox txtProblemasTexto;
+        private System.Windows.Forms.TextBox txtSolucionRecomendacion;
+        private System.Windows.Forms.TextBox txtNombreModeloEquipo;
+        private System.Windows.Forms.Label label7;
+        private FontAwesome.Sharp.IconButton btnGuardar;
+        private System.Windows.Forms.Label lblLoggedInUser;
     }
 }
