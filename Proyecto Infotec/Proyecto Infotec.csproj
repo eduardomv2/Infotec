@@ -78,10 +78,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>InfoTecDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="NuevoRegistro.cs">
+    <Compile Include="Forms\NuevoRegistro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NuevoRegistro.Designer.cs">
+    <Compile Include="Forms\NuevoRegistro.Designer.cs">
       <DependentUpon>NuevoRegistro.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -105,7 +105,7 @@
     <EmbeddedResource Include="Forms\InicioSesion.resx">
       <DependentUpon>InicioSesion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NuevoRegistro.resx">
+    <EmbeddedResource Include="Forms\NuevoRegistro.resx">
       <DependentUpon>NuevoRegistro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
