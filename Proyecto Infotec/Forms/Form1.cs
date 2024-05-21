@@ -14,19 +14,17 @@ namespace Proyecto_Infotec
 
         // Variable global para guardar el nombre de usuario
         public static string LoggedInUser;
+
         public Form1()
         {
             InitializeComponent();
-          
-
-
         }
-
         private void Form1_Load(object sender, EventArgs e)
         {
            
-          
         }
+
+        #region Boton para Acceder
         private void button1_Click(object sender, EventArgs e)
         {
             string connectionString = ConfigurationManager.ConnectionStrings["Proyecto_Infotec.Properties.Settings.InfoTecConnectionString"].ConnectionString;
@@ -39,7 +37,6 @@ namespace Proyecto_Infotec
                 return;
             }
             
-
             // Conexión a la base de datos
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -94,8 +91,9 @@ namespace Proyecto_Infotec
                 }
             }
         }
+        #endregion
 
-       
+        #region Link para redirigir a la ventana de registro
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             //close this form
@@ -104,7 +102,9 @@ namespace Proyecto_Infotec
             InicioSesion f3 = new InicioSesion();
             f3.Show();
         }
+        #endregion
 
+        #region Redondear esquinas del formulario
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
             GraphicsPath borderPath = new GraphicsPath();
@@ -118,5 +118,13 @@ namespace Proyecto_Infotec
 
             this.Region = new Region(borderPath);
         }
+        #endregion
+
+        #region CONTRASEÑA OLVIDADA
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            MessageBox.Show("QUE LASTIMA, AUN NO PODEMOS RECUPERAR LA CONTRASEÑA");
+        }
+        #endregion
     }
 }

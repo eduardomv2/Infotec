@@ -11,23 +11,76 @@ using System.Windows.Forms;
 using Newtonsoft.Json;
 using System.IO;
 using System.Configuration;
+using FontAwesome.Sharp;
 
 
 namespace Proyecto_Infotec
 {
     public partial class Registros : Form
     {
-
-        // Cadena de conexión a la base de datos
-        private string connectionString = ConfigurationManager.ConnectionStrings["Proyecto_Infotec.Properties.Settings.InfoTecConnectionString"].ConnectionString;
-
+        //Fields
+        private IconButton currentBtn;
+        private Panel leftBorderBtn;
+        private Form currentChildForm;
         public Registros()
         {
             InitializeComponent();
+
+            leftBorderBtn = new Panel();
+            leftBorderBtn.Size = new Size(7, 60);
+            panel1.Controls.Add(leftBorderBtn);
         }
+
+        #region ANIMACION BOTONES   
+        //structs 
+        private struct RGBColors
+        {
+            public static Color color1 = Color.FromArgb(172, 126, 241);
+            public static Color color2 = Color.FromArgb(249, 118, 176);
+            public static Color color3 = Color.FromArgb(253, 138, 114);
+            public static Color color4 = Color.FromArgb(95, 77, 221);
+            public static Color color5 = Color.FromArgb(249, 88, 155);
+            public static Color color6 = Color.FromArgb(24, 161, 251);
+        }
+
+        private void ActivateButton(object senderBtn, Color color)
+        {
+            if (senderBtn != null)
+            {
+                DisableButton();
+                //Button
+                currentBtn = (IconButton)senderBtn;
+                currentBtn.BackColor = Color.FromArgb(37, 36, 81);
+                currentBtn.ForeColor = color;
+                currentBtn.TextAlign = ContentAlignment.MiddleCenter;
+                currentBtn.IconColor = color;
+                currentBtn.TextImageRelation = TextImageRelation.TextBeforeImage;
+                //Left border button
+                leftBorderBtn.BackColor = color;
+                leftBorderBtn.Location = new Point(0, currentBtn.Location.Y);
+                leftBorderBtn.Visible = true;
+                leftBorderBtn.BringToFront();            
+            }
+        }
+       
+
+        private void DisableButton()
+        {
+            if (currentBtn != null)
+            {
+                currentBtn.BackColor = Color.FromArgb(31, 30, 68);
+                currentBtn.ForeColor = Color.Gainsboro;
+                currentBtn.TextAlign = ContentAlignment.MiddleLeft;
+                currentBtn.IconColor = Color.Gainsboro;
+                currentBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
+                currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            }
+        }
+        #endregion
+
         private void Registros_Load(object sender, EventArgs e)
         {
-            CargarDatos();
+            
         }
 
         #region Pannel
@@ -37,136 +90,62 @@ namespace Proyecto_Infotec
         }
         #endregion
 
-        #region Metodo CargarDatos
-        private void CargarDatos()
+        #region METODO PARA ABRIR FORMULARIOS   
+        private void OpenChildForm(Form childForm)
         {
-            try
+            if (currentChildForm != null)
             {
-                // Crear conexión a la base de datos
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
-                    // Abrir conexión
-                    connection.Open();
-
-                    // Crear adaptador de datos
-                    // RETIRÉ ID HASTA SOLUCUONARLO
-                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT Nombre, Matricula, NumeroContacto, Problemas, Solucion, NombreModeloEquipo, Responsable, FechaActual, FechaEntrega FROM EquipoServicio", connection);
-
-                    // Crear DataTable para almacenar los datos
-                    DataTable table = new DataTable();
-
-                    // Llenar DataTable con los datos de la consulta
-                    adapter.Fill(table);
-
-                    // Asignar DataTable al DataGridView
-                    dataGridView1.DataSource = table;          
-                }
+                currentChildForm.Close();
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error al cargar datos: {ex.Message}");
-            }
+            currentChildForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panel3.Controls.Add(childForm);
+            panel3.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
         }
         #endregion
 
-        #region Boton para guardar los datos en JSON
-        private void button6_Click(object sender, EventArgs e)
-        {
-            // Consultar los datos de la tabla EquipoServicio
-            List<EquipoServicio> equipos = ConsultarEquipos();
-
-            // Serializar la lista de equipos a formato JSON
-            string json = JsonConvert.SerializeObject(equipos, Formatting.Indented);
-
-            try
-            {
-                // Mostrar el cuadro de diálogo de selección de archivos
-                SaveFileDialog saveFileDialog = new SaveFileDialog();
-                saveFileDialog.Filter = "Archivos JSON (*.json)|*.json|Todos los archivos (*.*)|*.*";
-                saveFileDialog.Title = "Guardar como archivo JSON";
-                saveFileDialog.ShowDialog();
-
-                // Si el usuario elige una ubicación y hace clic en "Guardar"
-                if (saveFileDialog.FileName != "")
-                {
-                    // Guardar el JSON en el archivo seleccionado por el usuario
-                    File.WriteAllText(saveFileDialog.FileName, json);
-                    MessageBox.Show("Datos guardados correctamente.");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error al guardar el archivo JSON: {ex.Message}");
-            }
-        }
-        #endregion
-
-        #region Listar los datos de la DB
-        private List<EquipoServicio> ConsultarEquipos()
-        {
-            List<EquipoServicio> equipos = new List<EquipoServicio>();
-
-            try
-            {
-                // Crear conexión a la base de datos
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
-                    // Abrir conexión
-                    connection.Open();
-
-                    // Crear adaptador de datos
-                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT Id, Nombre, Matricula, NumeroContacto, Problemas, Solucion, NombreModeloEquipo, Responsable, FechaActual, FechaEntrega FROM EquipoServicio", connection);
-
-                    // Crear DataTable para almacenar los datos
-                    DataTable table = new DataTable();
-
-                    // Llenar DataTable con los datos de la consulta
-                    adapter.Fill(table);
-
-                    // Convertir DataTable a lista de objetos EquipoServicio
-                    foreach (DataRow row in table.Rows)
-                    {
-                        EquipoServicio equipo = new EquipoServicio
-                        {
-                            Id = Convert.ToInt32(row["Id"]),
-                            Nombre = Convert.ToString(row["Nombre"]),
-                            Matricula = Convert.ToString(row["Matricula"]),
-                            NumeroContacto = Convert.ToString(row["NumeroContacto"]),
-                            Problemas = Convert.ToString(row["Problemas"]),
-                            Solucion = Convert.ToString(row["Solucion"]),
-                            NombreModeloEquipo = Convert.ToString(row["ModeloEquipo"]),
-                            Responsable = Convert.ToString(row["Responsable"]),
-                            FechaActual = Convert.ToDateTime(row["FechaActual"]),
-                            FechaEntrega = Convert.ToDateTime(row["FechaEntrega"])
-                        };
-                        equipos.Add(equipo);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error al consultar datos: {ex.Message}");
-            }
-
-            return equipos;
-        }
-        #endregion
-
-        #region Botonen menu lateral
+        #region BotoneS menu lateral
         private void iconButton1_Click(object sender, EventArgs e)
         {
             //open form user
-            User f2 = new User();
-            f2.Show();
+            ActivateButton(sender, RGBColors.color1);
+            OpenChildForm(new User());
+
         }
 
         private void iconButton2_Click(object sender, EventArgs e)
         {
             //open form nuevo registro
-            NuevoRegistro f3 = new NuevoRegistro();
-            f3.Show();
+            ActivateButton(sender, RGBColors.color2);
+            OpenChildForm(new NuevoRegistro());
+        }
+        private void iconPictureBox1_Click(object sender, EventArgs e)
+        {
+            
+            OpenChildForm(new Inicio());
         }
 
+        private void iconButton3_Click_1(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color3);
+            OpenChildForm(new Consultas());
+        }
+
+        private void iconButton4_Click_1(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color4);
+
+        }
+
+        private void iconButton5_Click_1(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color5);
+            OpenChildForm(new MasEquiposAyudados());
+        }
         #endregion
     }
 
