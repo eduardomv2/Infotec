@@ -25,6 +25,11 @@ namespace Proyecto_Infotec
         {
             InitializeComponent();
         }
+        private void Registros_Load(object sender, EventArgs e)
+        {
+            CargarDatos();
+        }
+
         #region Pannel
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
@@ -32,12 +37,7 @@ namespace Proyecto_Infotec
         }
         #endregion
 
-        private void Registros_Load(object sender, EventArgs e)
-        {
-            // Cargar datos de la tabla Login al DataGridView al cargar el formulario
-            CargarDatos();
-        }
-
+        #region DATOS DE LA DB
         private void CargarDatos()
         {
             try
@@ -49,7 +49,7 @@ namespace Proyecto_Infotec
                     connection.Open();
 
                     // Crear adaptador de datos
-                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT Id, Nombre, Matricula, Carrera, Usuario FROM Login", connection);
+                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT Nombre, Matricula, NumeroContacto, Problemas, Solucion, NombreModelo, Responsable, FechaActual, FechaEntrega FROM EquipoServicio", connection);
 
                     // Crear DataTable para almacenar los datos
                     DataTable table = new DataTable();
@@ -59,6 +59,9 @@ namespace Proyecto_Infotec
 
                     // Asignar DataTable al DataGridView
                     dataGridView1.DataSource = table;
+
+                    // Ocultar la columna de ID
+                    dataGridView1.Columns["Id"].Visible = false; // Reemplaza "Id" con el nombre real de la columna de ID en tu base de datos
                 }
             }
             catch (Exception ex)
@@ -66,14 +69,16 @@ namespace Proyecto_Infotec
                 MessageBox.Show($"Error al cargar datos: {ex.Message}");
             }
         }
+        #endregion
 
+        #region Boton para guardar los datos en JSON
         private void button6_Click(object sender, EventArgs e)
         {
-            // Consultar los datos de la tabla Login
-            List<Usuario> usuarios = ConsultarUsuarios();
+            // Consultar los datos de la tabla EquipoServicio
+            List<EquipoServicio> equipos = ConsultarEquipos();
 
-            // Serializar la lista de usuarios a formato JSON
-            string json = JsonConvert.SerializeObject(usuarios, Formatting.Indented);
+            // Serializar la lista de equipos a formato JSON
+            string json = JsonConvert.SerializeObject(equipos, Formatting.Indented);
 
             try
             {
@@ -96,10 +101,12 @@ namespace Proyecto_Infotec
                 MessageBox.Show($"Error al guardar el archivo JSON: {ex.Message}");
             }
         }
+        #endregion
 
-        private List<Usuario> ConsultarUsuarios()
+        #region Listar los datos de la DB
+        private List<EquipoServicio> ConsultarEquipos()
         {
-            List<Usuario> usuarios = new List<Usuario>();
+            List<EquipoServicio> equipos = new List<EquipoServicio>();
 
             try
             {
@@ -110,7 +117,7 @@ namespace Proyecto_Infotec
                     connection.Open();
 
                     // Crear adaptador de datos
-                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT Id, Nombre, Matricula, Carrera, Usuario FROM Login", connection);
+                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT Id, Nombre, Matricula, NumeroContacto, Problemas, Solucion, NombreModeloEquipo, Responsable, FechaActual, FechaEntrega FROM EquipoServicio", connection);
 
                     // Crear DataTable para almacenar los datos
                     DataTable table = new DataTable();
@@ -118,18 +125,23 @@ namespace Proyecto_Infotec
                     // Llenar DataTable con los datos de la consulta
                     adapter.Fill(table);
 
-                    // Convertir DataTable a lista de objetos Usuario
+                    // Convertir DataTable a lista de objetos EquipoServicio
                     foreach (DataRow row in table.Rows)
                     {
-                        Usuario usuario = new Usuario
+                        EquipoServicio equipo = new EquipoServicio
                         {
                             Id = Convert.ToInt32(row["Id"]),
                             Nombre = Convert.ToString(row["Nombre"]),
                             Matricula = Convert.ToString(row["Matricula"]),
-                            Carrera = Convert.ToString(row["Carrera"]),
-                            Usuarios = Convert.ToString(row["Usuario"])
+                            NumeroContacto = Convert.ToString(row["NumeroContacto"]),
+                            Problemas = Convert.ToString(row["Problemas"]),
+                            Solucion = Convert.ToString(row["Solucion"]),
+                            NombreModeloEquipo = Convert.ToString(row["NombreModeloEquipo"]),
+                            Responsable = Convert.ToString(row["Responsable"]),
+                            FechaActual = Convert.ToDateTime(row["FechaActual"]),
+                            FechaEntrega = Convert.ToDateTime(row["FechaEntrega"])
                         };
-                        usuarios.Add(usuario);
+                        equipos.Add(equipo);
                     }
                 }
             }
@@ -138,9 +150,11 @@ namespace Proyecto_Infotec
                 MessageBox.Show($"Error al consultar datos: {ex.Message}");
             }
 
-            return usuarios;
+            return equipos;
         }
+        #endregion
 
+        #region Botonen menu lateral
         private void iconButton1_Click(object sender, EventArgs e)
         {
             //open form user
@@ -154,6 +168,8 @@ namespace Proyecto_Infotec
             NuevoRegistro f3 = new NuevoRegistro();
             f3.Show();
         }
+
+        #endregion
     }
-    
+
 }

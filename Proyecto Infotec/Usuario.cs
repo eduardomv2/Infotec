@@ -6,12 +6,17 @@ using System.Threading.Tasks;
 
 namespace Proyecto_Infotec
 {
-    internal class Usuario
+    public class EquipoServicio
     {
         public int Id { get; set; }
         public string Nombre { get; set; }
         public string Matricula { get; set; }
-        public string Carrera { get; set; }
-        public string Usuarios { get; set; }
+        public string NumeroContacto { get; set; }
+        public string Problemas { get; set; }
+        public string Solucion { get; set; }
+        public string NombreModeloEquipo { get; set; }
+        public string Responsable { get; set; }
+        public DateTime FechaActual { get; set; }
+        public DateTime FechaEntrega { get; set; }
     }
 }

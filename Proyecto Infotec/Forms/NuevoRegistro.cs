@@ -25,8 +25,8 @@ namespace Proyecto_Infotec
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "INSERT INTO EquipoServicio (Nombre, Matricula, NumeroContacto, Problemas, Solucion, NombreModeloEquipo, Responsable) " +
-                               "VALUES (@Nombre, @Matricula, @NumeroContacto, @Problemas, @Solucion, @NombreModeloEquipo, @Responsable)";
+                string query = "INSERT INTO EquipoServicio (Nombre, Matricula, NumeroContacto, Problemas, Solucion, NombreModeloEquipo, Responsable, FechaActual, FechaEntrega) " +
+                               "VALUES (@Nombre, @Matricula, @NumeroContacto, @Problemas, @Solucion, @NombreModeloEquipo, @Responsable, @FechaActual, @FechaEntrega)";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -35,8 +35,10 @@ namespace Proyecto_Infotec
                     command.Parameters.AddWithValue("@NumeroContacto", txtNumeroContacto.Text.Trim());
                     command.Parameters.AddWithValue("@Problemas", txtProblemasTexto.Text.Trim());
                     command.Parameters.AddWithValue("@Solucion", txtSolucionRecomendacion.Text.Trim());
-                    command.Parameters.AddWithValue("@NombreModeloEquipo", txtNombreModeloEquipo.Text.Trim()); // Agrega el nuevo parámetro
-                    command.Parameters.AddWithValue("@Responsable", Form1.LoggedInUser); // Agrega el responsable
+                    command.Parameters.AddWithValue("@NombreModeloEquipo", txtNombreModeloEquipo.Text.Trim()); 
+                    command.Parameters.AddWithValue("@Responsable", Form1.LoggedInUser); 
+                    command.Parameters.AddWithValue("@FechaActual", dtpFechaActual.Value); 
+                    command.Parameters.AddWithValue("@FechaEntrega", dtpFechaEntrega.Value); 
 
                     try
                     {

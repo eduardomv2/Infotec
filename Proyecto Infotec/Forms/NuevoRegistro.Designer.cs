@@ -43,6 +43,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.btnGuardar = new FontAwesome.Sharp.IconButton();
             this.lblLoggedInUser = new System.Windows.Forms.Label();
+            this.dtpFechaEntrega = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaActual = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // label1
@@ -174,11 +176,27 @@
             this.lblLoggedInUser.TabIndex = 14;
             this.lblLoggedInUser.Text = "label8";
             // 
+            // dtpFechaEntrega
+            // 
+            this.dtpFechaEntrega.Location = new System.Drawing.Point(472, 62);
+            this.dtpFechaEntrega.Name = "dtpFechaEntrega";
+            this.dtpFechaEntrega.Size = new System.Drawing.Size(200, 20);
+            this.dtpFechaEntrega.TabIndex = 15;
+            // 
+            // dtpFechaActual
+            // 
+            this.dtpFechaActual.Location = new System.Drawing.Point(472, 25);
+            this.dtpFechaActual.Name = "dtpFechaActual";
+            this.dtpFechaActual.Size = new System.Drawing.Size(200, 20);
+            this.dtpFechaActual.TabIndex = 16;
+            // 
             // NuevoRegistro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 501);
+            this.Controls.Add(this.dtpFechaActual);
+            this.Controls.Add(this.dtpFechaEntrega);
             this.Controls.Add(this.lblLoggedInUser);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.txtNombreModeloEquipo);
@@ -219,5 +237,7 @@
         private System.Windows.Forms.Label label7;
         private FontAwesome.Sharp.IconButton btnGuardar;
         private System.Windows.Forms.Label lblLoggedInUser;
+        private System.Windows.Forms.DateTimePicker dtpFechaEntrega;
+        private System.Windows.Forms.DateTimePicker dtpFechaActual;
     }
 }

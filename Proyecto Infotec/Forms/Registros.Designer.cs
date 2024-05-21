@@ -38,6 +38,7 @@
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -67,6 +68,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.button6);
             this.panel3.Controls.Add(this.dataGridView1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -78,7 +80,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(614, 514);
+            this.button6.Location = new System.Drawing.Point(605, 587);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 23);
             this.button6.TabIndex = 1;
@@ -89,9 +91,9 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(334, 81);
+            this.dataGridView1.Location = new System.Drawing.Point(238, 81);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(604, 408);
+            this.dataGridView1.Size = new System.Drawing.Size(781, 485);
             this.dataGridView1.TabIndex = 0;
             // 
             // iconButton5
@@ -109,7 +111,7 @@
             this.iconButton5.Name = "iconButton5";
             this.iconButton5.Size = new System.Drawing.Size(220, 58);
             this.iconButton5.TabIndex = 8;
-            this.iconButton5.Text = "Cuadro de Honor";
+            this.iconButton5.Text = "Mas Equipos Ayudados";
             this.iconButton5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton5.UseVisualStyleBackColor = true;
@@ -129,7 +131,7 @@
             this.iconButton4.Name = "iconButton4";
             this.iconButton4.Size = new System.Drawing.Size(220, 58);
             this.iconButton4.TabIndex = 7;
-            this.iconButton4.Text = "Personas ayudadas";
+            this.iconButton4.Text = "Graficos";
             this.iconButton4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton4.UseVisualStyleBackColor = true;
@@ -196,6 +198,16 @@
             this.iconButton1.UseVisualStyleBackColor = true;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("HP Simplified", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(490, 36);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(271, 23);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "REGISTROS HASTA EL DIA DE HOY";
+            // 
             // Registros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -211,6 +223,7 @@
             this.Load += new System.EventHandler(this.Registros_Load);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -227,5 +240,6 @@
         private FontAwesome.Sharp.IconButton iconButton3;
         private FontAwesome.Sharp.IconButton iconButton2;
         private FontAwesome.Sharp.IconButton iconButton5;
+        private System.Windows.Forms.Label label1;
     }
 }
