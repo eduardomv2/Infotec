@@ -4,21 +4,28 @@ using System.Data;
 using System.Configuration;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Drawing.Drawing2D;
+using System.Drawing;
 
 namespace Proyecto_Infotec
 {
     public partial class Form1 : Form
     {
+
         // Variable global para guardar el nombre de usuario
         public static string LoggedInUser;
         public Form1()
         {
             InitializeComponent();
+          
+
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+           
+          
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -96,6 +103,20 @@ namespace Proyecto_Infotec
             //next form
             InicioSesion f3 = new InicioSesion();
             f3.Show();
+        }
+
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            GraphicsPath borderPath = new GraphicsPath();
+            int borderRadius = 30; // Ajusta el radio de las esquinas redondeadas aquí
+
+            borderPath.AddArc(0, 0, borderRadius, borderRadius, 180, 90); // Esquina superior izquierda
+            borderPath.AddArc(this.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90); // Esquina superior derecha
+            borderPath.AddArc(this.Width - borderRadius, this.Height - borderRadius, borderRadius, borderRadius, 0, 90); // Esquina inferior derecha
+            borderPath.AddArc(0, this.Height - borderRadius, borderRadius, borderRadius, 90, 90); // Esquina inferior izquierda
+            borderPath.CloseFigure();
+
+            this.Region = new Region(borderPath);
         }
     }
 }

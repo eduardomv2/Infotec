@@ -37,7 +37,7 @@ namespace Proyecto_Infotec
         }
         #endregion
 
-        #region DATOS DE LA DB
+        #region Metodo CargarDatos
         private void CargarDatos()
         {
             try
@@ -49,7 +49,8 @@ namespace Proyecto_Infotec
                     connection.Open();
 
                     // Crear adaptador de datos
-                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT Nombre, Matricula, NumeroContacto, Problemas, Solucion, NombreModelo, Responsable, FechaActual, FechaEntrega FROM EquipoServicio", connection);
+                    // RETIRÉ ID HASTA SOLUCUONARLO
+                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT Nombre, Matricula, NumeroContacto, Problemas, Solucion, NombreModeloEquipo, Responsable, FechaActual, FechaEntrega FROM EquipoServicio", connection);
 
                     // Crear DataTable para almacenar los datos
                     DataTable table = new DataTable();
@@ -58,10 +59,7 @@ namespace Proyecto_Infotec
                     adapter.Fill(table);
 
                     // Asignar DataTable al DataGridView
-                    dataGridView1.DataSource = table;
-
-                    // Ocultar la columna de ID
-                    dataGridView1.Columns["Id"].Visible = false; // Reemplaza "Id" con el nombre real de la columna de ID en tu base de datos
+                    dataGridView1.DataSource = table;          
                 }
             }
             catch (Exception ex)
@@ -136,7 +134,7 @@ namespace Proyecto_Infotec
                             NumeroContacto = Convert.ToString(row["NumeroContacto"]),
                             Problemas = Convert.ToString(row["Problemas"]),
                             Solucion = Convert.ToString(row["Solucion"]),
-                            NombreModeloEquipo = Convert.ToString(row["NombreModeloEquipo"]),
+                            NombreModeloEquipo = Convert.ToString(row["ModeloEquipo"]),
                             Responsable = Convert.ToString(row["Responsable"]),
                             FechaActual = Convert.ToDateTime(row["FechaActual"]),
                             FechaEntrega = Convert.ToDateTime(row["FechaEntrega"])

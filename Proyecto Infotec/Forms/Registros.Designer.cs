@@ -74,26 +74,27 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1031, 631);
+            this.panel3.Size = new System.Drawing.Size(1184, 631);
             this.panel3.TabIndex = 4;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(605, 587);
+            this.button6.Location = new System.Drawing.Point(1042, 584);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.Size = new System.Drawing.Size(132, 35);
             this.button6.TabIndex = 1;
-            this.button6.Text = "button6";
+            this.button6.Text = "GUARDAR DATOS";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // dataGridView1
             // 
+            this.dataGridView1.CausesValidation = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(238, 81);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(781, 485);
+            this.dataGridView1.Size = new System.Drawing.Size(936, 485);
             this.dataGridView1.TabIndex = 0;
             // 
             // iconButton5
@@ -202,7 +203,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("HP Simplified", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(490, 36);
+            this.label1.Location = new System.Drawing.Point(569, 37);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(271, 23);
             this.label1.TabIndex = 2;
@@ -212,7 +213,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1031, 631);
+            this.ClientSize = new System.Drawing.Size(1184, 631);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
