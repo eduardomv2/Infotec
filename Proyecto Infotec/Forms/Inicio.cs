@@ -113,7 +113,7 @@ namespace Proyecto_Infotec
                             Id = Convert.ToInt32(row["Id"]),
                             Nombre = Convert.ToString(row["Nombre"]),
                             Matricula = Convert.ToString(row["Matricula"]),
-                            NumeroContacto = Convert.ToString(row["NumeroContacto"]),
+                            //NumeroContacto = Convert.ToString(row["NumeroContacto"]),
                             Problemas = Convert.ToString(row["Problemas"]),
                             Solucion = Convert.ToString(row["Solucion"]),
                             NombreModeloEquipo = Convert.ToString(row["NombreModeloEquipo"]),

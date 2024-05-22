@@ -146,6 +146,7 @@ namespace Proyecto_Infotec
         private void iconButton4_Click_1(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color4);
+            OpenChildForm(new Graficos());
 
         }
 
@@ -167,6 +168,13 @@ namespace Proyecto_Infotec
                 FileName = url,
                 UseShellExecute = true
             });
+        }
+
+        private void iconButton7_Click(object sender, EventArgs e)
+        {
+            //mazimizar
+            this.WindowState = FormWindowState.Maximized;   
+
         }
     }
 

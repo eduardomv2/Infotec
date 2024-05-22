@@ -38,7 +38,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("HP Simplified", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(344, 9);
+            this.label1.Location = new System.Drawing.Point(305, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(374, 30);
             this.label1.TabIndex = 5;
@@ -47,7 +47,7 @@
             // button6
             // 
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(866, 528);
+            this.button6.Location = new System.Drawing.Point(448, 541);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(120, 29);
             this.button6.TabIndex = 4;
@@ -59,16 +59,16 @@
             // 
             this.dataGridView1.CausesValidation = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(32, 58);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 66);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(954, 464);
+            this.dataGridView1.Size = new System.Drawing.Size(960, 469);
             this.dataGridView1.TabIndex = 3;
             // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1014, 564);
+            this.ClientSize = new System.Drawing.Size(984, 590);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.dataGridView1);
