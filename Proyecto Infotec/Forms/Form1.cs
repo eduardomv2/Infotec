@@ -18,6 +18,8 @@ namespace Proyecto_Infotec
         public Form1()
         {
             InitializeComponent();
+            button3.Visible = true;
+            button2.Visible = false;
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -127,10 +129,51 @@ namespace Proyecto_Infotec
         }
         #endregion
 
+
+
+        #region textbox con contraseña oculta y botones para mostrar y ocultar
         private void txtPassword_TextChanged(object sender, EventArgs e)
         {
             // Ocultar la contraseña
             txtPassword.PasswordChar = '*';
+
         }
+        // Boton para ocultar contraseña en texto plano 
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            // Boton para ocultar contraseña en texto plano 
+            if (txtPassword.PasswordChar == '\0')
+            {
+                txtPassword.PasswordChar = '*';
+
+                button3.Visible = true;
+                button2.Visible = false;
+            }
+            else  
+            {
+                txtPassword.PasswordChar = '*';
+            }
+            
+        }
+
+
+        //boton para mostrar contraseña en texto plano
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (txtPassword.PasswordChar == '*')
+            {
+               txtPassword.PasswordChar = '\0';
+
+               button3.Visible = false;
+               button2.Visible = true;
+            }
+            else
+            {
+                txtPassword.PasswordChar = '*';
+            }
+           
+        }
+        #endregion
     }
 }
