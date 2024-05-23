@@ -126,5 +126,11 @@ namespace Proyecto_Infotec
             MessageBox.Show("QUE LASTIMA, AUN NO PODEMOS RECUPERAR LA CONTRASEÑA");
         }
         #endregion
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+            // Ocultar la contraseña
+            txtPassword.PasswordChar = '*';
+        }
     }
 }
