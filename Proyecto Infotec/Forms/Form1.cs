@@ -18,8 +18,11 @@ namespace Proyecto_Infotec
         public Form1()
         {
             InitializeComponent();
-            button3.Visible = true;
-            button2.Visible = false;
+            button3.Visible = false;
+            button2.Visible = true;
+            txtPassword.UseSystemPasswordChar = true; // Oculta la contraseña por defecto
+           
+
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -134,45 +137,31 @@ namespace Proyecto_Infotec
         #region textbox con contraseña oculta y botones para mostrar y ocultar
         private void txtPassword_TextChanged(object sender, EventArgs e)
         {
-            // Ocultar la contraseña
-            txtPassword.PasswordChar = '*';
+            // Si el texto está vacío, asegura que el botón de ocultar esté oculto
+            if (string.IsNullOrEmpty(txtPassword.Text))
+            {
+                button3.Visible = true;
+                button2.Visible = false;
+            }
 
         }
         // Boton para ocultar contraseña en texto plano 
         private void button2_Click(object sender, EventArgs e)
         {
-
-            // Boton para ocultar contraseña en texto plano 
-            if (txtPassword.PasswordChar == '\0')
-            {
-                txtPassword.PasswordChar = '*';
-
-                button3.Visible = true;
-                button2.Visible = false;
-            }
-            else  
-            {
-                txtPassword.PasswordChar = '*';
-            }
-            
+            txtPassword.UseSystemPasswordChar = false;
+            button2.Visible = false;
+            button3.Visible = true;
         }
 
 
         //boton para mostrar contraseña en texto plano
         private void button3_Click(object sender, EventArgs e)
         {
-            if (txtPassword.PasswordChar == '*')
-            {
-               txtPassword.PasswordChar = '\0';
+          
 
-               button3.Visible = false;
-               button2.Visible = true;
-            }
-            else
-            {
-                txtPassword.PasswordChar = '*';
-            }
-           
+            txtPassword.UseSystemPasswordChar = true;
+            button2.Visible = true;
+            button3.Visible = false;
         }
         #endregion
     }
