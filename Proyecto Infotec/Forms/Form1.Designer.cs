@@ -38,6 +38,8 @@
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.iconButton9 = new FontAwesome.Sharp.IconButton();
+            this.iconButton8 = new FontAwesome.Sharp.IconButton();
             this.SuspendLayout();
             // 
             // button1
@@ -105,20 +107,52 @@
             resources.ApplyResources(this.button2, "button2");
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.ForeColor = System.Drawing.Color.Transparent;
             this.button2.Name = "button2";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.Window;
+            this.button3.BackColor = System.Drawing.Color.White;
             this.button3.BackgroundImage = global::Proyecto_Infotec.Properties.Resources.eyeclose;
             resources.ApplyResources(this.button3, "button3");
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.ForeColor = System.Drawing.Color.Transparent;
             this.button3.Name = "button3";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // iconButton9
+            // 
+            resources.ApplyResources(this.iconButton9, "iconButton9");
+            this.iconButton9.BackColor = System.Drawing.Color.Transparent;
+            this.iconButton9.BackgroundImage = global::Proyecto_Infotec.Properties.Resources.minimizar;
+            this.iconButton9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButton9.FlatAppearance.BorderSize = 0;
+            this.iconButton9.ForeColor = System.Drawing.Color.Transparent;
+            this.iconButton9.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconButton9.IconColor = System.Drawing.Color.Black;
+            this.iconButton9.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton9.Name = "iconButton9";
+            this.iconButton9.UseVisualStyleBackColor = false;
+            this.iconButton9.Click += new System.EventHandler(this.iconButton9_Click);
+            // 
+            // iconButton8
+            // 
+            resources.ApplyResources(this.iconButton8, "iconButton8");
+            this.iconButton8.BackColor = System.Drawing.Color.Transparent;
+            this.iconButton8.BackgroundImage = global::Proyecto_Infotec.Properties.Resources.boton_de_cruz;
+            this.iconButton8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButton8.FlatAppearance.BorderSize = 0;
+            this.iconButton8.ForeColor = System.Drawing.Color.Transparent;
+            this.iconButton8.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconButton8.IconColor = System.Drawing.Color.Black;
+            this.iconButton8.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton8.Name = "iconButton8";
+            this.iconButton8.UseVisualStyleBackColor = false;
+            this.iconButton8.Click += new System.EventHandler(this.iconButton8_Click);
             // 
             // Form1
             // 
@@ -126,6 +160,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.BackgroundImage = global::Proyecto_Infotec.Properties.Resources.cop;
+            this.Controls.Add(this.iconButton9);
+            this.Controls.Add(this.iconButton8);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.linkLabel2);
@@ -158,6 +194,8 @@
         private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private FontAwesome.Sharp.IconButton iconButton9;
+        private FontAwesome.Sharp.IconButton iconButton8;
     }
 }
 

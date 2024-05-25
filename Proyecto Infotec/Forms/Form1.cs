@@ -132,8 +132,6 @@ namespace Proyecto_Infotec
         }
         #endregion
 
-
-
         #region textbox con contraseña oculta y botones para mostrar y ocultar
         private void txtPassword_TextChanged(object sender, EventArgs e)
         {
@@ -162,6 +160,21 @@ namespace Proyecto_Infotec
             txtPassword.UseSystemPasswordChar = true;
             button2.Visible = true;
             button3.Visible = false;
+        }
+        #endregion
+
+        #region Botones para controlar la ventana
+
+        private void iconButton9_Click(object sender, EventArgs e)
+        {
+            //minimizar formulario
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void iconButton8_Click(object sender, EventArgs e)
+        {
+            //cerrar formulario
+            this.Close();
         }
         #endregion
     }

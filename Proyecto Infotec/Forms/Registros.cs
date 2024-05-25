@@ -158,7 +158,8 @@ namespace Proyecto_Infotec
         #endregion
 
         private void iconButton6_Click(object sender, EventArgs e)
-        {
+        { 
+     
             // URL de la página web que quieres abrir
             string url = "https://github.com/eduardomv2/Infotec";
 
@@ -172,8 +173,32 @@ namespace Proyecto_Infotec
 
         private void iconButton7_Click(object sender, EventArgs e)
         {
-            //mazimizar
-            this.WindowState = FormWindowState.Maximized;   
+
+            //maximizar y restaurar formulario
+            if (WindowState == FormWindowState.Normal)
+            {
+                WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                WindowState = FormWindowState.Normal;
+            }
+
+        }
+
+        private void iconButton8_Click(object sender, EventArgs e)
+        {
+            //cerrar formulario
+            this.Close();
+        }
+
+        private void iconButton9_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }
