@@ -47,7 +47,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(38, 85);
+            this.label1.Location = new System.Drawing.Point(56, 29);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(116, 13);
             this.label1.TabIndex = 0;
@@ -56,7 +56,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(41, 165);
+            this.label2.Location = new System.Drawing.Point(59, 109);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 13);
             this.label2.TabIndex = 1;
@@ -64,14 +64,14 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(41, 113);
+            this.txtNombre.Location = new System.Drawing.Point(59, 57);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(432, 20);
             this.txtNombre.TabIndex = 2;
             // 
             // txtMatricula
             // 
-            this.txtMatricula.Location = new System.Drawing.Point(41, 181);
+            this.txtMatricula.Location = new System.Drawing.Point(59, 125);
             this.txtMatricula.Name = "txtMatricula";
             this.txtMatricula.Size = new System.Drawing.Size(432, 20);
             this.txtMatricula.TabIndex = 3;
@@ -79,7 +79,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(41, 242);
+            this.label3.Location = new System.Drawing.Point(60, 173);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 13);
             this.label3.TabIndex = 4;
@@ -87,14 +87,14 @@
             // 
             // PasswordTxt
             // 
-            this.PasswordTxt.Location = new System.Drawing.Point(41, 410);
+            this.PasswordTxt.Location = new System.Drawing.Point(59, 354);
             this.PasswordTxt.Name = "PasswordTxt";
             this.PasswordTxt.Size = new System.Drawing.Size(432, 20);
             this.PasswordTxt.TabIndex = 7;
             // 
             // PasswordConfirmTxt
             // 
-            this.PasswordConfirmTxt.Location = new System.Drawing.Point(41, 482);
+            this.PasswordConfirmTxt.Location = new System.Drawing.Point(59, 426);
             this.PasswordConfirmTxt.Name = "PasswordConfirmTxt";
             this.PasswordConfirmTxt.Size = new System.Drawing.Size(432, 20);
             this.PasswordConfirmTxt.TabIndex = 8;
@@ -102,7 +102,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(41, 384);
+            this.label4.Location = new System.Drawing.Point(59, 328);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(81, 13);
             this.label4.TabIndex = 9;
@@ -111,7 +111,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(42, 454);
+            this.label5.Location = new System.Drawing.Point(60, 398);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(148, 13);
             this.label5.TabIndex = 10;
@@ -125,7 +125,7 @@
             "Electronica",
             "Gestion Empresarial",
             "Energias Renovables"});
-            this.comboBoxCarrera.Location = new System.Drawing.Point(41, 258);
+            this.comboBoxCarrera.Location = new System.Drawing.Point(59, 202);
             this.comboBoxCarrera.Name = "comboBoxCarrera";
             this.comboBoxCarrera.Size = new System.Drawing.Size(432, 21);
             this.comboBoxCarrera.TabIndex = 11;
@@ -133,7 +133,7 @@
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(41, 344);
+            this.txtUsuario.Location = new System.Drawing.Point(59, 288);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(432, 20);
             this.txtUsuario.TabIndex = 15;
@@ -141,7 +141,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(42, 311);
+            this.label6.Location = new System.Drawing.Point(63, 256);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(56, 13);
             this.label6.TabIndex = 16;
@@ -152,7 +152,7 @@
             this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.None;
             this.iconButton2.IconColor = System.Drawing.Color.Black;
             this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.Location = new System.Drawing.Point(317, 551);
+            this.iconButton2.Location = new System.Drawing.Point(335, 495);
             this.iconButton2.Name = "iconButton2";
             this.iconButton2.Size = new System.Drawing.Size(75, 23);
             this.iconButton2.TabIndex = 17;
@@ -165,7 +165,7 @@
             this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
             this.iconButton1.IconColor = System.Drawing.Color.Black;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.Location = new System.Drawing.Point(398, 551);
+            this.iconButton1.Location = new System.Drawing.Point(416, 495);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(75, 23);
             this.iconButton1.TabIndex = 6;
@@ -178,7 +178,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(509, 586);
+            this.ClientSize = new System.Drawing.Size(540, 529);
             this.Controls.Add(this.iconButton2);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtUsuario);
@@ -193,6 +193,7 @@
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "InicioSesion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InicioSesion";

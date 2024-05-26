@@ -40,12 +40,14 @@
             this.button3 = new System.Windows.Forms.Button();
             this.iconButton9 = new FontAwesome.Sharp.IconButton();
             this.iconButton8 = new FontAwesome.Sharp.IconButton();
+            this.progressBar = new System.Windows.Forms.ProgressBar();
             this.SuspendLayout();
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.DodgerBlue;
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(this.button1, "button1");
             this.button1.Name = "button1";
             this.button1.UseVisualStyleBackColor = false;
@@ -154,12 +156,21 @@
             this.iconButton8.UseVisualStyleBackColor = false;
             this.iconButton8.Click += new System.EventHandler(this.iconButton8_Click);
             // 
+            // progressBar
+            // 
+            this.progressBar.ForeColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.progressBar, "progressBar");
+            this.progressBar.Name = "progressBar";
+            this.progressBar.UseWaitCursor = true;
+            this.progressBar.Click += new System.EventHandler(this.progressBar_Click);
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.BackgroundImage = global::Proyecto_Infotec.Properties.Resources.cop;
+            this.Controls.Add(this.progressBar);
             this.Controls.Add(this.iconButton9);
             this.Controls.Add(this.iconButton8);
             this.Controls.Add(this.button3);
@@ -196,6 +207,7 @@
         private System.Windows.Forms.Button button3;
         private FontAwesome.Sharp.IconButton iconButton9;
         private FontAwesome.Sharp.IconButton iconButton8;
+        private System.Windows.Forms.ProgressBar progressBar;
     }
 }
 

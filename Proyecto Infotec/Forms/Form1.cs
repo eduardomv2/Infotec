@@ -14,14 +14,14 @@ namespace Proyecto_Infotec
 
         // Variable global para guardar el nombre de usuario
         public static string LoggedInUser;
-
+        
         public Form1()
         {
             InitializeComponent();
             button3.Visible = false;
             button2.Visible = true;
             txtPassword.UseSystemPasswordChar = true; // Oculta la contraseña por defecto
-           
+            progressBar.Visible = false;
 
         }
         private void Form1_Load(object sender, EventArgs e)
@@ -32,16 +32,22 @@ namespace Proyecto_Infotec
         #region Boton para Acceder
         private void button1_Click(object sender, EventArgs e)
         {
+            // Iniciar barra de progreso
+            progressBar.Visible = true;
+            progressBar.Style = ProgressBarStyle.Marquee;
+
             string connectionString = ConfigurationManager.ConnectionStrings["Proyecto_Infotec.Properties.Settings.InfoTecConnectionString"].ConnectionString;
             string usuario = txtUser.Text.Trim();  // El nombre de usuario ingresado, eliminando espacios en blanco
             string contraseña = txtPassword.Text.Trim();  // La contraseña ingresada, eliminando espacios en blanco
 
             if (string.IsNullOrEmpty(usuario) || string.IsNullOrEmpty(contraseña))
             {
+                // Detener barra de progreso
+                progressBar.Visible = false;
                 MessageBox.Show("Por favor, ingrese usuario y contraseña.");
                 return;
             }
-            
+
             // Conexión a la base de datos
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -55,9 +61,6 @@ namespace Proyecto_Infotec
                     {
                         command.Parameters.Add("@Usuario", SqlDbType.NVarChar).Value = usuario;  // Agrega parámetro con tipo de dato específico
 
-                        // Mensaje de depuración
-                        MessageBox.Show($"Consultando usuario: '{usuario}'");
-
                         SqlDataReader reader = command.ExecuteReader();  // Ejecuta la consulta
                         if (reader.Read())  // Si se encontró el usuario
                         {
@@ -66,32 +69,43 @@ namespace Proyecto_Infotec
                             // Guardar el nombre de usuario en la variable global
                             LoggedInUser = usuario;
 
-                            // Mensaje de depuración
-                            //MOSTRAR CONTRASEÑA DEL USUARIO INGRESADO POR SI SE OLVIDA
-                            //MessageBox.Show($"Contraseña en la base de datos: '{storedPassword}'");
-
                             if (storedPassword == contraseña)  // Compara contraseñas
                             {
-                                MessageBox.Show("Acceso concedido.");
-                                //close this form
-                                this.Hide();
-                                //next form
-                                Registros f3 = new Registros();
-                                f3.Show();
+                                // Simular proceso de carga
+                                Timer timer = new Timer();
+                                timer.Interval = 1000; // segundos de carga simulada
+                                timer.Tick += (s, ev) =>
+                                {
+                                    // Detener la barra de progreso
+                                    progressBar.Visible = false;
+                                    timer.Stop();
+
+                                    // Acceso concedido, cerrar formulario actual y abrir nuevo formulario
+                                    this.Hide();
+                                    Registros f3 = new Registros();
+                                    f3.Show();
+                                };
+                                timer.Start();
                             }
                             else
                             {
+                                // Detener barra de progreso
+                                progressBar.Visible = false;
                                 MessageBox.Show("Contraseña incorrecta.");
                             }
                         }
                         else
                         {
+                            // Detener barra de progreso
+                            progressBar.Visible = false;
                             MessageBox.Show("Usuario no encontrado.");  // Usuario no existe
                         }
                     }
                 }
                 catch (Exception ex)  // Manejo de excepciones
                 {
+                    // Detener barra de progreso
+                    progressBar.Visible = false;
                     MessageBox.Show($"Error: {ex.Message}");
                 }
             }
@@ -177,5 +191,10 @@ namespace Proyecto_Infotec
             this.Close();
         }
         #endregion
+
+        private void progressBar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
