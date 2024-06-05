@@ -251,9 +251,9 @@
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox1.IconSize = 96;
             this.iconPictureBox1.InitialImage = global::Proyecto_Infotec.Properties.Resources.estrella;
-            this.iconPictureBox1.Location = new System.Drawing.Point(42, 34);
+            this.iconPictureBox1.Location = new System.Drawing.Point(51, 33);
             this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Size = new System.Drawing.Size(103, 96);
+            this.iconPictureBox1.Size = new System.Drawing.Size(98, 96);
             this.iconPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.iconPictureBox1.TabIndex = 3;
             this.iconPictureBox1.TabStop = false;

@@ -37,7 +37,7 @@ namespace Proyecto_Infotec
 
                     // Crear adaptador de datos
                     // RETIRÉ ID HASTA SOLUCUONARLO
-                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT Nombre, Matricula, NumeroContacto, Problemas, Solucion, NombreModeloEquipo, Responsable, FechaActual, FechaEntrega FROM EquipoServicio", connection);
+                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT Nombre, Matricula, Carrera, NumeroContacto, Problemas, Solucion, NombreModeloEquipo, Responsable, FechaActual, FechaEntrega FROM EquipoServicio", connection);
 
                     // Crear DataTable para almacenar los datos
                     DataTable table = new DataTable();
@@ -97,7 +97,7 @@ namespace Proyecto_Infotec
                     connection.Open();
 
                     // Crear adaptador de datos
-                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT Id, Nombre, Matricula, NumeroContacto, Problemas, Solucion, NombreModeloEquipo, Responsable, FechaActual, FechaEntrega FROM EquipoServicio", connection);
+                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT Id, Nombre, Matricula, Carrera, NumeroContacto, Problemas, Solucion, NombreModeloEquipo, Responsable, FechaActual, FechaEntrega FROM EquipoServicio", connection);
 
                     // Crear DataTable para almacenar los datos
                     DataTable table = new DataTable();
@@ -113,6 +113,7 @@ namespace Proyecto_Infotec
                             Id = Convert.ToInt32(row["Id"]),
                             Nombre = Convert.ToString(row["Nombre"]),
                             Matricula = Convert.ToString(row["Matricula"]),
+                            Carrera = Convert.ToString(row["Carrera"]),
                             //NumeroContacto = Convert.ToString(row["NumeroContacto"]),
                             Problemas = Convert.ToString(row["Problemas"]),
                             Solucion = Convert.ToString(row["Solucion"]),
