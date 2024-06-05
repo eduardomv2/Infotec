@@ -66,8 +66,8 @@
             // txtUser
             // 
             this.txtUser.BackColor = System.Drawing.SystemColors.Window;
-            this.txtUser.ForeColor = System.Drawing.Color.Black;
             resources.ApplyResources(this.txtUser, "txtUser");
+            this.txtUser.ForeColor = System.Drawing.Color.Black;
             this.txtUser.Name = "txtUser";
             // 
             // txtPassword

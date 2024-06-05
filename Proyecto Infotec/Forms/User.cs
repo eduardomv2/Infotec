@@ -5,6 +5,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,7 +42,7 @@ namespace Proyecto_Infotec
                     connection.Open();
 
                     // Consulta SQL con TRIM para manejar los espacios en blanco
-                    string query = "SELECT Nombre, Matricula, Carrera, Usuario FROM Login WHERE LTRIM(RTRIM(Usuario)) = @Usuario";
+                    string query = "SELECT Nombre, Matricula, Carrera, Usuario, ImagenPerfil FROM Login WHERE LTRIM(RTRIM(Usuario)) = @Usuario";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@Usuario", usuario);
@@ -53,6 +54,15 @@ namespace Proyecto_Infotec
                             label2.Text = reader["Matricula"].ToString();
                             label3.Text = reader["Carrera"].ToString();
                             label4.Text = reader["Usuario"].ToString();
+
+                            if (reader["ImagenPerfil"] != DBNull.Value)
+                            {
+                                byte[] imageBytes = (byte[])reader["ImagenPerfil"];
+                                using (MemoryStream ms = new MemoryStream(imageBytes))
+                                {
+                                    pictureBoxProfile.Image = Image.FromStream(ms);
+                                }
+                            }
                         }
                         else
                         {
@@ -66,6 +76,56 @@ namespace Proyecto_Infotec
                 }
             }
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // Mostrar el cuadro de diálogo de selección de archivos
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Archivos de imagen (*.jpg, *.jpeg, *.png)|*.jpg;*.jpeg;*.png|Todos los archivos (*.*)|*.*";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                // Cargar la imagen seleccionada en el PictureBox
+                pictureBoxProfile.Image = new Bitmap(openFileDialog.FileName);
+
+                // Convertir la imagen a un arreglo de bytes
+                byte[] imageBytes;
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    pictureBoxProfile.Image.Save(ms, pictureBoxProfile.Image.RawFormat);
+                    imageBytes = ms.ToArray();
+                }
+
+                // Guardar la imagen en la base de datos
+                string connectionString = "Data Source=eduardomv\\SQLEXPRESS;Initial Catalog=InfoTec;Integrated Security=True;TrustServerCertificate=True";
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    try
+                    {
+                        connection.Open();
+                        string query = "UPDATE Login SET ImagenPerfil = @ImagenPerfil WHERE Usuario = @Usuario";
+                        using (SqlCommand command = new SqlCommand(query, connection))
+                        {
+                            command.Parameters.Add("@ImagenPerfil", SqlDbType.VarBinary).Value = imageBytes;
+                            command.Parameters.Add("@Usuario", SqlDbType.NVarChar).Value = Form1.LoggedInUser;
+
+                            int rowsAffected = command.ExecuteNonQuery();
+                            if (rowsAffected > 0)
+                            {
+                                MessageBox.Show("Imagen de perfil guardada correctamente.");
+                            }
+                            else
+                            {
+                                MessageBox.Show("No se pudo actualizar la imagen de perfil.");
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error al guardar la imagen de perfil: {ex.Message}");
+                    }
+                }
+            }
         }
     }
 }

@@ -231,7 +231,7 @@
             this.iconButton9.IconChar = FontAwesome.Sharp.IconChar.None;
             this.iconButton9.IconColor = System.Drawing.Color.Black;
             this.iconButton9.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton9.Location = new System.Drawing.Point(131, 6);
+            this.iconButton9.Location = new System.Drawing.Point(135, 8);
             this.iconButton9.Name = "iconButton9";
             this.iconButton9.Size = new System.Drawing.Size(20, 19);
             this.iconButton9.TabIndex = 2;
@@ -249,11 +249,11 @@
             this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.None;
             this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.IconSize = 73;
+            this.iconPictureBox1.IconSize = 96;
             this.iconPictureBox1.InitialImage = global::Proyecto_Infotec.Properties.Resources.estrella;
-            this.iconPictureBox1.Location = new System.Drawing.Point(63, 45);
+            this.iconPictureBox1.Location = new System.Drawing.Point(42, 34);
             this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Size = new System.Drawing.Size(73, 73);
+            this.iconPictureBox1.Size = new System.Drawing.Size(103, 96);
             this.iconPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.iconPictureBox1.TabIndex = 3;
             this.iconPictureBox1.TabStop = false;
@@ -272,9 +272,9 @@
             this.iconButton8.IconChar = FontAwesome.Sharp.IconChar.None;
             this.iconButton8.IconColor = System.Drawing.Color.Black;
             this.iconButton8.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton8.Location = new System.Drawing.Point(175, 6);
+            this.iconButton8.Location = new System.Drawing.Point(177, 8);
             this.iconButton8.Name = "iconButton8";
-            this.iconButton8.Size = new System.Drawing.Size(16, 16);
+            this.iconButton8.Size = new System.Drawing.Size(16, 14);
             this.iconButton8.TabIndex = 1;
             this.iconButton8.UseVisualStyleBackColor = false;
             this.iconButton8.Click += new System.EventHandler(this.iconButton8_Click);
@@ -292,7 +292,7 @@
             this.iconButton7.IconChar = FontAwesome.Sharp.IconChar.None;
             this.iconButton7.IconColor = System.Drawing.Color.Black;
             this.iconButton7.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton7.Location = new System.Drawing.Point(157, 8);
+            this.iconButton7.Location = new System.Drawing.Point(159, 10);
             this.iconButton7.Name = "iconButton7";
             this.iconButton7.Size = new System.Drawing.Size(12, 12);
             this.iconButton7.TabIndex = 0;

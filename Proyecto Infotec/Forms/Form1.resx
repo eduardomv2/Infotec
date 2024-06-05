@@ -183,11 +183,14 @@
   <data name="&gt;&gt;linkLabel1.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
+  <data name="txtUser.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
   <data name="txtUser.Location" type="System.Drawing.Point, System.Drawing">
     <value>338, 168</value>
   </data>
   <data name="txtUser.Size" type="System.Drawing.Size, System.Drawing">
-    <value>247, 20</value>
+    <value>247, 22</value>
   </data>
   <data name="txtUser.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -204,11 +207,14 @@
   <data name="&gt;&gt;txtUser.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
+  <data name="txtPassword.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
   <data name="txtPassword.Location" type="System.Drawing.Point, System.Drawing">
     <value>337, 218</value>
   </data>
   <data name="txtPassword.Size" type="System.Drawing.Size, System.Drawing">
-    <value>247, 20</value>
+    <value>247, 22</value>
   </data>
   <data name="txtPassword.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -361,7 +367,7 @@
     <value>NoControl</value>
   </data>
   <data name="button3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>564, 218</value>
+    <value>564, 220</value>
   </data>
   <data name="button3.Size" type="System.Drawing.Size, System.Drawing">
     <value>15, 18</value>
