@@ -5,6 +5,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +19,7 @@ namespace Proyecto_Infotec.Forms
         public InicioSesion()
         {
             InitializeComponent();
+           
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -149,6 +151,79 @@ namespace Proyecto_Infotec.Forms
             Form1 f1 = new Form1();
             f1.Show();
             
+        }
+
+        private void InicioSesion_Paint(object sender, PaintEventArgs e)
+        {
+            GraphicsPath borderPath = new GraphicsPath();
+            int borderRadius = 30; // Ajusta el radio de las esquinas redondeadas aquí
+
+            borderPath.AddArc(0, 0, borderRadius, borderRadius, 180, 90); // Esquina superior izquierda
+            borderPath.AddArc(this.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90); // Esquina superior derecha
+            borderPath.AddArc(this.Width - borderRadius, this.Height - borderRadius, borderRadius, borderRadius, 0, 90); // Esquina inferior derecha
+            borderPath.AddArc(0, this.Height - borderRadius, borderRadius, borderRadius, 90, 90); // Esquina inferior izquierda
+            borderPath.CloseFigure();
+
+            this.Region = new Region(borderPath);
+        }
+
+        private void txtMatricula_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+           
+            
+
+
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtUsuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PasswordConfirmTxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PasswordTxt_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 } 
