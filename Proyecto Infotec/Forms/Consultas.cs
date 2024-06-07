@@ -16,5 +16,10 @@ namespace Proyecto_Infotec
         {
             InitializeComponent();
         }
+
+        private void Consultas_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
