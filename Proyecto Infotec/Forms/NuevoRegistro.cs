@@ -163,5 +163,15 @@ namespace Proyecto_Infotec
                 }
             }
         }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtpFechaActual_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

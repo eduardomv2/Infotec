@@ -56,11 +56,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Myanmar Text", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(30, 24);
+            this.label1.Location = new System.Drawing.Point(27, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 16);
+            this.label1.Size = new System.Drawing.Size(104, 27);
             this.label1.TabIndex = 0;
             this.label1.Text = "Responsable:";
             // 
@@ -111,7 +111,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(26, 433);
+            this.label6.Location = new System.Drawing.Point(32, 432);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(171, 13);
             this.label6.TabIndex = 5;
@@ -121,7 +121,7 @@
             // 
             this.txtNombre.Location = new System.Drawing.Point(156, 57);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(329, 20);
+            this.txtNombre.Size = new System.Drawing.Size(350, 20);
             this.txtNombre.TabIndex = 6;
             this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
@@ -141,10 +141,10 @@
             // 
             // txtProblemasTexto
             // 
-            this.txtProblemasTexto.Location = new System.Drawing.Point(29, 348);
+            this.txtProblemasTexto.Location = new System.Drawing.Point(30, 344);
             this.txtProblemasTexto.Multiline = true;
             this.txtProblemasTexto.Name = "txtProblemasTexto";
-            this.txtProblemasTexto.Size = new System.Drawing.Size(506, 77);
+            this.txtProblemasTexto.Size = new System.Drawing.Size(477, 77);
             this.txtProblemasTexto.TabIndex = 9;
             // 
             // txtSolucionRecomendacion
@@ -152,7 +152,7 @@
             this.txtSolucionRecomendacion.Location = new System.Drawing.Point(29, 455);
             this.txtSolucionRecomendacion.Multiline = true;
             this.txtSolucionRecomendacion.Name = "txtSolucionRecomendacion";
-            this.txtSolucionRecomendacion.Size = new System.Drawing.Size(506, 103);
+            this.txtSolucionRecomendacion.Size = new System.Drawing.Size(477, 103);
             this.txtSolucionRecomendacion.TabIndex = 10;
             // 
             // txtNombreModeloEquipo
@@ -167,7 +167,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(32, 227);
+            this.label7.Location = new System.Drawing.Point(30, 227);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(53, 16);
             this.label7.TabIndex = 11;
@@ -178,7 +178,7 @@
             this.btnGuardar.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnGuardar.IconColor = System.Drawing.Color.Black;
             this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnGuardar.Location = new System.Drawing.Point(557, 525);
+            this.btnGuardar.Location = new System.Drawing.Point(694, 525);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(145, 33);
             this.btnGuardar.TabIndex = 13;
@@ -189,45 +189,47 @@
             // lblLoggedInUser
             // 
             this.lblLoggedInUser.AutoSize = true;
-            this.lblLoggedInUser.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoggedInUser.Font = new System.Drawing.Font("Myanmar Text", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLoggedInUser.ForeColor = System.Drawing.Color.LightCoral;
-            this.lblLoggedInUser.Location = new System.Drawing.Point(143, 24);
+            this.lblLoggedInUser.Location = new System.Drawing.Point(141, 12);
             this.lblLoggedInUser.Name = "lblLoggedInUser";
-            this.lblLoggedInUser.Size = new System.Drawing.Size(51, 16);
+            this.lblLoggedInUser.Size = new System.Drawing.Size(54, 27);
             this.lblLoggedInUser.TabIndex = 14;
             this.lblLoggedInUser.Text = "label8";
             // 
             // dtpFechaEntrega
             // 
-            this.dtpFechaEntrega.Location = new System.Drawing.Point(315, 286);
+            this.dtpFechaEntrega.Location = new System.Drawing.Point(286, 285);
             this.dtpFechaEntrega.Name = "dtpFechaEntrega";
             this.dtpFechaEntrega.Size = new System.Drawing.Size(220, 20);
             this.dtpFechaEntrega.TabIndex = 15;
             // 
             // dtpFechaActual
             // 
-            this.dtpFechaActual.Location = new System.Drawing.Point(33, 286);
+            this.dtpFechaActual.Location = new System.Drawing.Point(32, 286);
             this.dtpFechaActual.Name = "dtpFechaActual";
-            this.dtpFechaActual.Size = new System.Drawing.Size(219, 20);
+            this.dtpFechaActual.Size = new System.Drawing.Size(215, 20);
             this.dtpFechaActual.TabIndex = 16;
+            this.dtpFechaActual.ValueChanged += new System.EventHandler(this.dtpFechaActual_ValueChanged);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(30, 264);
+            this.label8.Location = new System.Drawing.Point(31, 266);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(117, 16);
             this.label8.TabIndex = 17;
             this.label8.Text = "Fecha de Entrega:";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(312, 264);
+            this.label9.Location = new System.Drawing.Point(284, 265);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(113, 16);
             this.label9.TabIndex = 18;
@@ -256,7 +258,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(272, 287);
+            this.label11.Location = new System.Drawing.Point(253, 288);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(30, 16);
             this.label11.TabIndex = 21;
@@ -267,10 +269,10 @@
             this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.SearchDollar;
             this.iconButton1.IconColor = System.Drawing.Color.Black;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 24;
+            this.iconButton1.IconSize = 16;
             this.iconButton1.Location = new System.Drawing.Point(318, 96);
             this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(25, 20);
+            this.iconButton1.Size = new System.Drawing.Size(21, 20);
             this.iconButton1.TabIndex = 24;
             this.iconButton1.UseVisualStyleBackColor = true;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
