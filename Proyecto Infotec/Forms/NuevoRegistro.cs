@@ -38,8 +38,8 @@ namespace Proyecto_Infotec
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string queryEquipoServicio = "INSERT INTO EquipoServicio (Nombre, Matricula, NumeroContacto, Problemas, Solucion, NombreModeloEquipo, Responsable, FechaActual, FechaEntrega) " +
-                                             "VALUES (@Nombre, @Matricula, @NumeroContacto, @Problemas, @Solucion, @NombreModeloEquipo, @Responsable, @FechaActual, @FechaEntrega)";
+                string queryEquipoServicio = "INSERT INTO EquipoServicio (Nombre, Matricula, NumeroContacto, Problemas, Solucion, NombreModeloEquipo, Responsable, FechaActual, FechaEntrega, Carrera) " +
+                                             "VALUES (@Nombre, @Matricula, @NumeroContacto, @Problemas, @Solucion, @NombreModeloEquipo, @Responsable, @FechaActual, @FechaEntrega, @Carrera)";
 
                 string queryUsuarios = "INSERT INTO Usuarios (Nombre, Matricula, Carrera, Contacto) " +
                                        "VALUES (@Nombre, @Matricula, @Carrera, @Contacto)";
@@ -56,6 +56,8 @@ namespace Proyecto_Infotec
                     commandEquipoServicio.Parameters.AddWithValue("@Responsable", Form1.LoggedInUser);
                     commandEquipoServicio.Parameters.AddWithValue("@FechaActual", dtpFechaActual.Value);
                     commandEquipoServicio.Parameters.AddWithValue("@FechaEntrega", dtpFechaEntrega.Value);
+                    commandEquipoServicio.Parameters.AddWithValue("@Carrera", txtCarrera.Text.Trim());
+
 
                     commandUsuarios.Parameters.AddWithValue("@Nombre", txtNombre.Text.Trim());
                     commandUsuarios.Parameters.AddWithValue("@Matricula", txtMatricula.Text.Trim());

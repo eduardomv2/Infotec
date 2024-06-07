@@ -19,7 +19,8 @@ namespace Proyecto_Infotec
         {
             InitializeComponent();
             button3.Visible = false;
-            button2.Visible = true;          
+            button2.Visible = true;
+            this.KeyPreview = true;
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -178,8 +179,15 @@ namespace Proyecto_Infotec
         }
         #endregion
 
-        private void progressBar_Click(object sender, EventArgs e)
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
+            //Press enter to login
+            if (e.KeyCode == Keys.Enter)
+            {
+                button1.PerformClick();
+            }
+            
 
         }
     }

@@ -51,10 +51,10 @@
             this.dgvEquiposArreglados.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvEquiposArreglados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEquiposArreglados.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dgvEquiposArreglados.Location = new System.Drawing.Point(369, 13);
+            this.dgvEquiposArreglados.Location = new System.Drawing.Point(406, 13);
             this.dgvEquiposArreglados.Name = "dgvEquiposArreglados";
             this.dgvEquiposArreglados.ReadOnly = true;
-            this.dgvEquiposArreglados.Size = new System.Drawing.Size(605, 565);
+            this.dgvEquiposArreglados.Size = new System.Drawing.Size(568, 565);
             this.dgvEquiposArreglados.TabIndex = 0;
             // 
             // label1
@@ -148,7 +148,7 @@
             // pictureBoxProfile
             // 
             this.pictureBoxProfile.BackColor = System.Drawing.Color.White;
-            this.pictureBoxProfile.Location = new System.Drawing.Point(106, 23);
+            this.pictureBoxProfile.Location = new System.Drawing.Point(121, 23);
             this.pictureBoxProfile.Name = "pictureBoxProfile";
             this.pictureBoxProfile.Size = new System.Drawing.Size(150, 163);
             this.pictureBoxProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -161,7 +161,7 @@
             this.buttonUpload.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonUpload.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.buttonUpload.ForeColor = System.Drawing.Color.Black;
-            this.buttonUpload.Location = new System.Drawing.Point(123, 192);
+            this.buttonUpload.Location = new System.Drawing.Point(141, 192);
             this.buttonUpload.Name = "buttonUpload";
             this.buttonUpload.Size = new System.Drawing.Size(117, 22);
             this.buttonUpload.TabIndex = 10;
