@@ -29,91 +29,67 @@
         private void InitializeComponent()
         {
             this.dgvReparaciones = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
-            this.iconButton3 = new FontAwesome.Sharp.IconButton();
+            this.dateTimePickerInicio = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerFin = new System.Windows.Forms.DateTimePicker();
+            this.btnBuscar = new FontAwesome.Sharp.IconButton();
+            this.numMinMaquinas = new System.Windows.Forms.NumericUpDown();
+            this.numMaxMaquinas = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReparaciones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMinMaquinas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMaxMaquinas)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvReparaciones
             // 
+            this.dgvReparaciones.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvReparaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvReparaciones.Location = new System.Drawing.Point(12, 162);
+            this.dgvReparaciones.Location = new System.Drawing.Point(13, 129);
             this.dgvReparaciones.Name = "dgvReparaciones";
-            this.dgvReparaciones.Size = new System.Drawing.Size(942, 380);
+            this.dgvReparaciones.Size = new System.Drawing.Size(942, 414);
             this.dgvReparaciones.TabIndex = 2;
             // 
-            // label1
+            // dateTimePickerInicio
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(127, 64);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(124, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Personas con 4 o menos";
+            this.dateTimePickerInicio.Location = new System.Drawing.Point(25, 28);
+            this.dateTimePickerInicio.Name = "dateTimePickerInicio";
+            this.dateTimePickerInicio.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePickerInicio.TabIndex = 3;
             // 
-            // label2
+            // dateTimePickerFin
             // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(441, 64);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Personas con 5";
+            this.dateTimePickerFin.Location = new System.Drawing.Point(245, 28);
+            this.dateTimePickerFin.Name = "dateTimePickerFin";
+            this.dateTimePickerFin.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePickerFin.TabIndex = 4;
             // 
-            // label3
+            // btnBuscar
             // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(703, 64);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(112, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Personas con 5 o mas";
+            this.btnBuscar.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnBuscar.IconColor = System.Drawing.Color.Black;
+            this.btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBuscar.Location = new System.Drawing.Point(678, 26);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(230, 22);
+            this.btnBuscar.TabIndex = 6;
+            this.btnBuscar.Text = "iconButton1";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // iconButton1
+            // numMinMaquinas
             // 
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.Location = new System.Drawing.Point(143, 97);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(90, 32);
-            this.iconButton1.TabIndex = 6;
-            this.iconButton1.Text = "iconButton1";
-            this.iconButton1.UseVisualStyleBackColor = true;
-            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            this.numMinMaquinas.Location = new System.Drawing.Point(460, 28);
+            this.numMinMaquinas.Name = "numMinMaquinas";
+            this.numMinMaquinas.Size = new System.Drawing.Size(64, 20);
+            this.numMinMaquinas.TabIndex = 8;
             // 
-            // iconButton2
+            // numMaxMaquinas
             // 
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton2.IconColor = System.Drawing.Color.Black;
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.Location = new System.Drawing.Point(444, 97);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(90, 32);
-            this.iconButton2.TabIndex = 7;
-            this.iconButton2.Text = "iconButton2";
-            this.iconButton2.UseVisualStyleBackColor = true;
-            this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
-            // 
-            // iconButton3
-            // 
-            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton3.IconColor = System.Drawing.Color.Black;
-            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton3.Location = new System.Drawing.Point(716, 97);
-            this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Size = new System.Drawing.Size(90, 32);
-            this.iconButton3.TabIndex = 8;
-            this.iconButton3.Text = "iconButton3";
-            this.iconButton3.UseVisualStyleBackColor = true;
-            this.iconButton3.Click += new System.EventHandler(this.iconButton3_Click);
+            this.numMaxMaquinas.Location = new System.Drawing.Point(530, 28);
+            this.numMaxMaquinas.Name = "numMaxMaquinas";
+            this.numMaxMaquinas.Size = new System.Drawing.Size(64, 20);
+            this.numMaxMaquinas.TabIndex = 9;
             // 
             // Consultas
             // 
@@ -121,30 +97,29 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(35)))), ((int)(((byte)(98)))));
             this.ClientSize = new System.Drawing.Size(966, 554);
-            this.Controls.Add(this.iconButton3);
-            this.Controls.Add(this.iconButton2);
-            this.Controls.Add(this.iconButton1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.numMaxMaquinas);
+            this.Controls.Add(this.numMinMaquinas);
+            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.dateTimePickerFin);
+            this.Controls.Add(this.dateTimePickerInicio);
             this.Controls.Add(this.dgvReparaciones);
             this.Name = "Consultas";
             this.Text = "Consultas";
             this.Load += new System.EventHandler(this.Consultas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvReparaciones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMinMaquinas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMaxMaquinas)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.DataGridView dgvReparaciones;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private FontAwesome.Sharp.IconButton iconButton2;
-        private FontAwesome.Sharp.IconButton iconButton3;
+        private System.Windows.Forms.DateTimePicker dateTimePickerInicio;
+        private System.Windows.Forms.DateTimePicker dateTimePickerFin;
+        private FontAwesome.Sharp.IconButton btnBuscar;
+        private System.Windows.Forms.NumericUpDown numMinMaquinas;
+        private System.Windows.Forms.NumericUpDown numMaxMaquinas;
     }
 }
