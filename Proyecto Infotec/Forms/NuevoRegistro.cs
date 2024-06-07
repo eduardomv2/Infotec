@@ -17,92 +17,88 @@ namespace Proyecto_Infotec
         public NuevoRegistro()
         {
             InitializeComponent();
-            // Ajusta el tamaño de las columnas y filas
-            dgvUsuarios.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            dgvUsuarios.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dgvUsuarios.AutoResizeColumns();
-            dgvUsuarios.AutoResizeRows();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["Proyecto_Infotec.Properties.Settings.InfoTecConnectionString"].ConnectionString;
-
-            string nombre = txtNombre.Text.Trim();
-            string matricula = txtMatricula.Text.Trim();
-            string numeroContacto = txtNumeroContacto.Text.Trim();
-            string problemas = txtProblemasTexto.Text.Trim();
-            string solucion = txtSolucionRecomendacion.Text.Trim();
-            string nombreModeloEquipo = txtNombreModeloEquipo.Text.Trim();
-            string Carrera = txtCarrera.Text.Trim();
-            string responsable = Form1.LoggedInUser;
-            DateTime fechaActual = dtpFechaActual.Value;
-            DateTime fechaEntrega = dtpFechaEntrega.Value;
-
-            if (string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(matricula) || string.IsNullOrEmpty(numeroContacto) ||
-                string.IsNullOrEmpty(problemas) || string.IsNullOrEmpty(solucion) || string.IsNullOrEmpty(nombreModeloEquipo))
+            // Verificar si hay campos vacíos
+            if (string.IsNullOrWhiteSpace(txtNombre.Text) ||
+                string.IsNullOrWhiteSpace(txtMatricula.Text) ||
+                string.IsNullOrWhiteSpace(txtNumeroContacto.Text) ||
+                string.IsNullOrWhiteSpace(txtProblemasTexto.Text) ||
+                string.IsNullOrWhiteSpace(txtSolucionRecomendacion.Text) ||
+                string.IsNullOrWhiteSpace(txtNombreModeloEquipo.Text) ||
+                string.IsNullOrWhiteSpace(txtCarrera.Text))
             {
-                MessageBox.Show("Por favor, complete todos los campos.");
+                MessageBox.Show("Por favor, complete todos los campos antes de guardar.");
                 return;
             }
 
+            string connectionString = ConfigurationManager.ConnectionStrings["Proyecto_Infotec.Properties.Settings.InfoTecConnectionString"].ConnectionString;
+
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                connection.Open();
+                string queryEquipoServicio = "INSERT INTO EquipoServicio (Nombre, Matricula, NumeroContacto, Problemas, Solucion, NombreModeloEquipo, Responsable, FechaActual, FechaEntrega) " +
+                                             "VALUES (@Nombre, @Matricula, @NumeroContacto, @Problemas, @Solucion, @NombreModeloEquipo, @Responsable, @FechaActual, @FechaEntrega)";
 
-                SqlTransaction transaction = connection.BeginTransaction();
-                try
+                string queryUsuarios = "INSERT INTO Usuarios (Nombre, Matricula, Carrera, Contacto) " +
+                                       "VALUES (@Nombre, @Matricula, @Carrera, @Contacto)";
+
+                using (SqlCommand commandEquipoServicio = new SqlCommand(queryEquipoServicio, connection))
+                using (SqlCommand commandUsuarios = new SqlCommand(queryUsuarios, connection))
                 {
-                    // Verificar si la matrícula existe en la tabla Usuarios
-                    string queryCheck = "SELECT COUNT(*) FROM Usuarios WHERE Matricula = @Matricula";
-                    using (SqlCommand commandCheck = new SqlCommand(queryCheck, connection, transaction))
+                    commandEquipoServicio.Parameters.AddWithValue("@Nombre", txtNombre.Text.Trim());
+                    commandEquipoServicio.Parameters.AddWithValue("@Matricula", txtMatricula.Text.Trim());
+                    commandEquipoServicio.Parameters.AddWithValue("@NumeroContacto", txtNumeroContacto.Text.Trim());
+                    commandEquipoServicio.Parameters.AddWithValue("@Problemas", txtProblemasTexto.Text.Trim());
+                    commandEquipoServicio.Parameters.AddWithValue("@Solucion", txtSolucionRecomendacion.Text.Trim());
+                    commandEquipoServicio.Parameters.AddWithValue("@NombreModeloEquipo", txtNombreModeloEquipo.Text.Trim());
+                    commandEquipoServicio.Parameters.AddWithValue("@Responsable", Form1.LoggedInUser);
+                    commandEquipoServicio.Parameters.AddWithValue("@FechaActual", dtpFechaActual.Value);
+                    commandEquipoServicio.Parameters.AddWithValue("@FechaEntrega", dtpFechaEntrega.Value);
+
+                    commandUsuarios.Parameters.AddWithValue("@Nombre", txtNombre.Text.Trim());
+                    commandUsuarios.Parameters.AddWithValue("@Matricula", txtMatricula.Text.Trim());
+                    commandUsuarios.Parameters.AddWithValue("@Carrera", txtCarrera.Text.Trim());
+                    commandUsuarios.Parameters.AddWithValue("@Contacto", txtNumeroContacto.Text.Trim());
+
+                    try
                     {
-                        commandCheck.Parameters.AddWithValue("@Matricula", matricula);
+                        connection.Open();
 
-                        int count = (int)commandCheck.ExecuteScalar();
-
-                        if (count == 0)
+                        // Verificar si la matrícula ya existe en la tabla Usuarios
+                        string queryVerificarMatricula = "SELECT COUNT(*) FROM Usuarios WHERE Matricula = @Matricula";
+                        using (SqlCommand commandVerificar = new SqlCommand(queryVerificarMatricula, connection))
                         {
-                            // Insertar en la tabla Usuarios si la matrícula no existe
-                            string queryInsertUsuarios = "INSERT INTO Usuarios (Nombre, Matricula) VALUES (@Nombre, @Matricula)";
-                            using (SqlCommand commandInsertUsuarios = new SqlCommand(queryInsertUsuarios, connection, transaction))
-                            {
-                                commandInsertUsuarios.Parameters.AddWithValue("@Nombre", nombre);
-                                commandInsertUsuarios.Parameters.AddWithValue("@Matricula", matricula);
+                            commandVerificar.Parameters.AddWithValue("@Matricula", txtMatricula.Text.Trim());
+                            int count = (int)commandVerificar.ExecuteScalar();
 
-                                commandInsertUsuarios.ExecuteNonQuery();
+                            if (count == 0)
+                            {
+                                // Insertar en la tabla Usuarios si la matrícula no existe
+                                commandUsuarios.ExecuteNonQuery();
                             }
                         }
-                    }
 
-                    // Insertar en la tabla EquipoServicio
-                    string queryInsertEquipoServicio = "INSERT INTO EquipoServicio (Nombre, Matricula, NumeroContacto, Problemas, Solucion, NombreModeloEquipo, Responsable, FechaActual, FechaEntrega, Carrera) " +
-                                                       "VALUES (@Nombre, @Matricula, @NumeroContacto, @Problemas, @Solucion, @NombreModeloEquipo, @Responsable, @FechaActual, @FechaEntrega, @Carrera)";
-                    using (SqlCommand commandInsertEquipoServicio = new SqlCommand(queryInsertEquipoServicio, connection, transaction))
+                        // Insertar en la tabla EquipoServicio
+                        commandEquipoServicio.ExecuteNonQuery();
+
+                        MessageBox.Show("Datos guardados exitosamente.");
+                        // Limpiar los campos del formulario
+                        txtNombre.Clear();
+                        txtMatricula.Clear();
+                        txtNumeroContacto.Clear();
+                        txtProblemasTexto.Clear();
+                        txtSolucionRecomendacion.Clear();
+                        txtNombreModeloEquipo.Clear();
+                        txtCarrera.Clear();
+                        dtpFechaActual.Value = DateTime.Now;
+                        dtpFechaEntrega.Value = DateTime.Now;
+                    }
+                    catch (Exception ex)
                     {
-                        commandInsertEquipoServicio.Parameters.AddWithValue("@Nombre", nombre);
-                        commandInsertEquipoServicio.Parameters.AddWithValue("@Matricula", matricula);
-                        commandInsertEquipoServicio.Parameters.AddWithValue("@NumeroContacto", numeroContacto);
-                        commandInsertEquipoServicio.Parameters.AddWithValue("@Problemas", problemas);
-                        commandInsertEquipoServicio.Parameters.AddWithValue("@Solucion", solucion);
-                        commandInsertEquipoServicio.Parameters.AddWithValue("@NombreModeloEquipo", nombreModeloEquipo);
-                        commandInsertEquipoServicio.Parameters.AddWithValue("@Responsable", responsable);
-                        commandInsertEquipoServicio.Parameters.AddWithValue("@Carrera", Carrera);
-                        commandInsertEquipoServicio.Parameters.AddWithValue("@FechaActual", fechaActual);
-                        commandInsertEquipoServicio.Parameters.AddWithValue("@FechaEntrega", fechaEntrega);
-
-                        commandInsertEquipoServicio.ExecuteNonQuery();
+                        MessageBox.Show($"Error al guardar los datos: {ex.Message}");
                     }
-
-                    // Confirmar la transacción
-                    transaction.Commit();
-                    MessageBox.Show("Datos guardados exitosamente.");
-                }
-                catch (Exception ex)
-                {
-                    // Revertir la transacción en caso de error
-                    transaction.Rollback();
-                    MessageBox.Show($"Error al guardar los datos: {ex.Message}");
                 }
             }
         }
@@ -112,33 +108,6 @@ namespace Proyecto_Infotec
         {
             // Actualizar el Label con el nombre del usuario logueado
             lblLoggedInUser.Text = Form1.LoggedInUser;
-
-            CargarDatosUsuarios();
-        }
-
-        private void CargarDatosUsuarios()
-        {
-            string connectionString = ConfigurationManager.ConnectionStrings["Proyecto_Infotec.Properties.Settings.InfoTecConnectionString"].ConnectionString;
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                try
-                {
-                    connection.Open();
-                    string query = "SELECT Nombre, Matricula FROM Usuarios";
-                    using (SqlCommand command = new SqlCommand(query, connection))
-                    {
-                        SqlDataAdapter adapter = new SqlDataAdapter(command);
-                        DataTable dataTable = new DataTable();
-                        adapter.Fill(dataTable);
-                        dgvUsuarios.DataSource = dataTable;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Error al cargar los datos de los usuarios: {ex.Message}");
-                }
-            }
         }
 
         private void txtNombre_TextChanged(object sender, EventArgs e)
@@ -149,6 +118,50 @@ namespace Proyecto_Infotec
         private void dgvUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+
+            string connectionString = ConfigurationManager.ConnectionStrings["Proyecto_Infotec.Properties.Settings.InfoTecConnectionString"].ConnectionString;
+            string matricula = txtMatricula.Text.Trim();
+
+            if (string.IsNullOrEmpty(matricula))
+            {
+                MessageBox.Show("Por favor, ingrese una matrícula.");
+                return;
+            }
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string queryBuscarUsuario = "SELECT Nombre, Carrera, Contacto FROM Usuarios WHERE Matricula = @Matricula";
+
+                using (SqlCommand commandBuscar = new SqlCommand(queryBuscarUsuario, connection))
+                {
+                    commandBuscar.Parameters.AddWithValue("@Matricula", matricula);
+
+                    try
+                    {
+                        connection.Open();
+                        SqlDataReader reader = commandBuscar.ExecuteReader();
+
+                        if (reader.Read())
+                        {
+                            txtNombre.Text = reader["Nombre"].ToString();
+                            txtCarrera.Text = reader["Carrera"].ToString();
+                            txtNumeroContacto.Text = reader["Contacto"].ToString();
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se encontró un usuario con esa matrícula.");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error al buscar la matrícula: {ex.Message}");
+                    }
+                }
+            }
         }
     }
 }

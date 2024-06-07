@@ -50,10 +50,7 @@
             this.txtCarrera = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.dgvUsuarios = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -181,7 +178,7 @@
             this.btnGuardar.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnGuardar.IconColor = System.Drawing.Color.Black;
             this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnGuardar.Location = new System.Drawing.Point(733, 409);
+            this.btnGuardar.Location = new System.Drawing.Point(557, 525);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(145, 33);
             this.btnGuardar.TabIndex = 13;
@@ -265,36 +262,18 @@
             this.label11.TabIndex = 21;
             this.label11.Text = "---->";
             // 
-            // dgvUsuarios
-            // 
-            this.dgvUsuarios.AllowUserToAddRows = false;
-            this.dgvUsuarios.AllowUserToDeleteRows = false;
-            this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUsuarios.Location = new System.Drawing.Point(658, 69);
-            this.dgvUsuarios.Name = "dgvUsuarios";
-            this.dgvUsuarios.ReadOnly = true;
-            this.dgvUsuarios.Size = new System.Drawing.Size(256, 180);
-            this.dgvUsuarios.TabIndex = 22;
-            this.dgvUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellContentClick);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(658, 24);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(206, 20);
-            this.textBox1.TabIndex = 23;
-            // 
             // iconButton1
             // 
             this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.SearchDollar;
             this.iconButton1.IconColor = System.Drawing.Color.Black;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 24;
-            this.iconButton1.Location = new System.Drawing.Point(873, 19);
+            this.iconButton1.Location = new System.Drawing.Point(318, 96);
             this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(40, 36);
+            this.iconButton1.Size = new System.Drawing.Size(25, 20);
             this.iconButton1.TabIndex = 24;
             this.iconButton1.UseVisualStyleBackColor = true;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // NuevoRegistro
             // 
@@ -303,8 +282,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(35)))), ((int)(((byte)(98)))));
             this.ClientSize = new System.Drawing.Size(966, 571);
             this.Controls.Add(this.iconButton1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.dgvUsuarios);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.txtCarrera);
             this.Controls.Add(this.label10);
@@ -330,7 +307,6 @@
             this.Name = "NuevoRegistro";
             this.Text = "NuevoRegistro";
             this.Load += new System.EventHandler(this.NuevoRegistro_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -360,8 +336,6 @@
         private System.Windows.Forms.TextBox txtCarrera;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.DataGridView dgvUsuarios;
-        private System.Windows.Forms.TextBox textBox1;
         private FontAwesome.Sharp.IconButton iconButton1;
     }
 }

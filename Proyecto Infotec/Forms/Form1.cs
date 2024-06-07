@@ -19,10 +19,7 @@ namespace Proyecto_Infotec
         {
             InitializeComponent();
             button3.Visible = false;
-            button2.Visible = true;
-            txtPassword.UseSystemPasswordChar = true; // Oculta la contraseña por defecto
-            progressBar.Visible = false;
-
+            button2.Visible = true;          
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -32,18 +29,12 @@ namespace Proyecto_Infotec
         #region Boton para Acceder
         private void button1_Click(object sender, EventArgs e)
         {
-            // Iniciar barra de progreso
-            progressBar.Visible = true;
-            progressBar.Style = ProgressBarStyle.Marquee;
-
             string connectionString = ConfigurationManager.ConnectionStrings["Proyecto_Infotec.Properties.Settings.InfoTecConnectionString"].ConnectionString;
             string usuario = txtUser.Text.Trim();  // El nombre de usuario ingresado, eliminando espacios en blanco
             string contraseña = txtPassword.Text.Trim();  // La contraseña ingresada, eliminando espacios en blanco
 
             if (string.IsNullOrEmpty(usuario) || string.IsNullOrEmpty(contraseña))
             {
-                // Detener barra de progreso
-                progressBar.Visible = false;
                 MessageBox.Show("Por favor, ingrese usuario y contraseña.");
                 return;
             }
@@ -71,41 +62,24 @@ namespace Proyecto_Infotec
 
                             if (storedPassword == contraseña)  // Compara contraseñas
                             {
-                                // Simular proceso de carga
-                                Timer timer = new Timer();
-                                timer.Interval = 1000; // segundos de carga simulada
-                                timer.Tick += (s, ev) =>
-                                {
-                                    // Detener la barra de progreso
-                                    progressBar.Visible = false;
-                                    timer.Stop();
-
-                                    // Acceso concedido, cerrar formulario actual y abrir nuevo formulario
-                                    this.Hide();
-                                    Registros f3 = new Registros();
-                                    f3.Show();
-                                };
-                                timer.Start();
+                                // Acceso concedido, cerrar formulario actual y abrir nuevo formulario
+                                this.Hide();
+                                Registros f3 = new Registros();
+                                f3.Show();
                             }
                             else
                             {
-                                // Detener barra de progreso
-                                progressBar.Visible = false;
                                 MessageBox.Show("Contraseña incorrecta.");
                             }
                         }
                         else
                         {
-                            // Detener barra de progreso
-                            progressBar.Visible = false;
                             MessageBox.Show("Usuario no encontrado.");  // Usuario no existe
                         }
                     }
                 }
                 catch (Exception ex)  // Manejo de excepciones
                 {
-                    // Detener barra de progreso
-                    progressBar.Visible = false;
                     MessageBox.Show($"Error: {ex.Message}");
                 }
             }
@@ -149,11 +123,25 @@ namespace Proyecto_Infotec
         #region textbox con contraseña oculta y botones para mostrar y ocultar
         private void txtPassword_TextChanged(object sender, EventArgs e)
         {
-            // Si el texto está vacío, asegura que el botón de ocultar esté oculto
+            // Si el texto está vacío, muestra el botón para ocultar la contraseña y oculta el botón para mostrarla
             if (string.IsNullOrEmpty(txtPassword.Text))
             {
-                button3.Visible = true;
-                button2.Visible = false;
+                button3.Visible = false; // Botón para mostrar la contraseña
+                button2.Visible = false; // Botón para ocultar la contraseña
+            }
+            else
+            {
+                // Cuando hay texto en el campo de contraseña, mostrar el botón correcto dependiendo del estado de la contraseña
+                if (txtPassword.UseSystemPasswordChar)
+                {
+                    button3.Visible = false; // Botón para mostrar la contraseña
+                    button2.Visible = true;  // Botón para ocultar la contraseña
+                }
+                else
+                {
+                    button3.Visible = true;  // Botón para mostrar la contraseña
+                    button2.Visible = false; // Botón para ocultar la contraseña
+                }
             }
 
         }
@@ -169,8 +157,6 @@ namespace Proyecto_Infotec
         //boton para mostrar contraseña en texto plano
         private void button3_Click(object sender, EventArgs e)
         {
-          
-
             txtPassword.UseSystemPasswordChar = true;
             button2.Visible = true;
             button3.Visible = false;

@@ -5,6 +5,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -26,8 +27,10 @@ namespace Proyecto_Infotec
             // Obtener el nombre de usuario guardado
             string usuario = Form1.LoggedInUser;
             CargarDatosUsuario(usuario);
+            CargarEquiposArreglados(usuario);
         }
 
+        #region Metodo para que se vean los datos del usuario
         private void CargarDatosUsuario(string usuario)
         {
             // Eliminar espacios en blanco al principio y al final del nombre de usuario
@@ -77,7 +80,9 @@ namespace Proyecto_Infotec
             }
 
         }
+        #endregion
 
+        #region Boton para guardar imagen
         private void button1_Click(object sender, EventArgs e)
         {
             // Mostrar el cuadro de diálogo de selección de archivos
@@ -125,7 +130,57 @@ namespace Proyecto_Infotec
                         MessageBox.Show($"Error al guardar la imagen de perfil: {ex.Message}");
                     }
                 }
+
             }
+            #endregion
+        }
+
+        private void CargarEquiposArreglados(string usuario)
+        {
+            // Eliminar espacios en blanco al principio y al final del nombre de usuario
+            usuario = usuario.Trim();
+
+            string connectionString = ConfigurationManager.ConnectionStrings["Proyecto_Infotec.Properties.Settings.InfoTecConnectionString"].ConnectionString;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    // Consulta SQL para obtener los equipos arreglados por el usuario
+                    string query = "SELECT * FROM EquipoServicio WHERE Responsable = @Usuario";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@Usuario", usuario);
+
+                        SqlDataAdapter adapter = new SqlDataAdapter(command);
+                        DataTable dataTable = new DataTable();
+                        adapter.Fill(dataTable);
+
+                        if (dataTable.Rows.Count > 0)
+                        {
+                            dgvEquiposArreglados.DataSource = dataTable;
+
+                            // Ajustar el tamaño de las columnas
+                            foreach (DataGridViewColumn column in dgvEquiposArreglados.Columns)
+                            {
+                                column.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                            }
+                        }
+                     
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al cargar los equipos arreglados: {ex.Message}");
+                }
+            }
+        }
+
+        private void pictureBoxProfile_Paint(object sender, PaintEventArgs e)
+        {
+            
         }
     }
 }
