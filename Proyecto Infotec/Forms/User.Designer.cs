@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvEquiposArreglados = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -39,26 +38,10 @@
             this.label8 = new System.Windows.Forms.Label();
             this.pictureBoxProfile = new System.Windows.Forms.PictureBox();
             this.buttonUpload = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEquiposArreglados)).BeginInit();
+            this.dgvEquiposArreglados = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfile)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEquiposArreglados)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dgvEquiposArreglados
-            // 
-            this.dgvEquiposArreglados.AllowUserToAddRows = false;
-            this.dgvEquiposArreglados.AllowUserToDeleteRows = false;
-            this.dgvEquiposArreglados.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvEquiposArreglados.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dgvEquiposArreglados.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvEquiposArreglados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEquiposArreglados.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dgvEquiposArreglados.Location = new System.Drawing.Point(406, 13);
-            this.dgvEquiposArreglados.Name = "dgvEquiposArreglados";
-            this.dgvEquiposArreglados.ReadOnly = true;
-            this.dgvEquiposArreglados.Size = new System.Drawing.Size(568, 565);
-            this.dgvEquiposArreglados.TabIndex = 0;
             // 
             // label1
             // 
@@ -172,6 +155,23 @@
             this.buttonUpload.UseVisualStyleBackColor = true;
             this.buttonUpload.Click += new System.EventHandler(this.button1_Click);
             // 
+            // dgvEquiposArreglados
+            // 
+            this.dgvEquiposArreglados.AllowUserToAddRows = false;
+            this.dgvEquiposArreglados.AllowUserToDeleteRows = false;
+            this.dgvEquiposArreglados.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvEquiposArreglados.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvEquiposArreglados.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvEquiposArreglados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEquiposArreglados.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dgvEquiposArreglados.Location = new System.Drawing.Point(406, 13);
+            this.dgvEquiposArreglados.Name = "dgvEquiposArreglados";
+            this.dgvEquiposArreglados.ReadOnly = true;
+            this.dgvEquiposArreglados.Size = new System.Drawing.Size(568, 565);
+            this.dgvEquiposArreglados.TabIndex = 0;
+            // 
             // User
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -193,16 +193,14 @@
             this.Name = "User";
             this.Text = "User";
             this.Load += new System.EventHandler(this.User_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEquiposArreglados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfile)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEquiposArreglados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgvEquiposArreglados;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -213,5 +211,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox pictureBoxProfile;
         private System.Windows.Forms.Button buttonUpload;
+        private System.Windows.Forms.DataGridView dgvEquiposArreglados;
     }
 }
