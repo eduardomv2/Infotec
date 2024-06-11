@@ -13,10 +13,10 @@ namespace Proyecto_Infotec
         public string Matricula { get; set; }
 
         public string Carrera { get; set; }
-        public string NumeroContacto { get; set; }
+        public string Contacto { get; set; }
         public string Problemas { get; set; }
         public string Solucion { get; set; }
-        public string NombreModeloEquipo { get; set; }
+        public string Equipo { get; set; }
         public string Responsable { get; set; }
         public DateTime FechaActual { get; set; }
         public DateTime FechaEntrega { get; set; }

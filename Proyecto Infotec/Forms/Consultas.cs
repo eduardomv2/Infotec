@@ -17,15 +17,23 @@ namespace Proyecto_Infotec
         public Consultas()
         {
             InitializeComponent();
+
+            
         }
 
         private void Consultas_Load(object sender, EventArgs e)
         {
-           
+          
+
         }
+
+
+
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+
+
             // Validar que los NumericUpDown no estén vacíos
             if (numMinMaquinas.Value == 0 && numMaxMaquinas.Value == 0)
             {

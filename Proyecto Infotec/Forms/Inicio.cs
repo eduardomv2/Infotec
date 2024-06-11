@@ -15,6 +15,7 @@ namespace Proyecto_Infotec
     {
         // Cadena de conexión a la base de datos
         private string connectionString = ConfigurationManager.ConnectionStrings["Proyecto_Infotec.Properties.Settings.InfoTecConnectionString"].ConnectionString;
+
         public Inicio()
         {
             InitializeComponent();
@@ -23,6 +24,17 @@ namespace Proyecto_Infotec
         private void Inicio_Load(object sender, EventArgs e)
         {
             CargarDatos();
+
+            dgvInicio.RowsDefaultCellStyle.BackColor = Color.FromArgb(240, 240, 240); // Gris claro para el fondo de las filas
+            dgvInicio.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(220, 220, 220); // Gris más oscuro para las filas impares
+
+            foreach (DataGridViewColumn column in dgvInicio.Columns)
+            {
+                column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            }
+
+           
+          
         }
 
         private void CargarDatos()
@@ -37,7 +49,7 @@ namespace Proyecto_Infotec
 
                     // Crear adaptador de datos
                     // RETIRÉ ID HASTA SOLUCUONARLO
-                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT Nombre, Matricula, Carrera, NumeroContacto, Problemas, Solucion, NombreModeloEquipo, Responsable, FechaActual, FechaEntrega FROM EquipoServicio", connection);
+                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT Nombre, Matricula, Carrera, Contacto, Problemas, Solucion, Equipo, Responsable, FechaActual, FechaEntrega FROM EquipoServicio", connection);
 
                     // Crear DataTable para almacenar los datos
                     DataTable table = new DataTable();
@@ -46,7 +58,7 @@ namespace Proyecto_Infotec
                     adapter.Fill(table);
 
                     // Asignar DataTable al DataGridView
-                    dataGridView1.DataSource = table;
+                    dgvInicio.DataSource = table;
                 }
             }
             catch (Exception ex)
@@ -97,7 +109,7 @@ namespace Proyecto_Infotec
                     connection.Open();
 
                     // Crear adaptador de datos
-                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT Id, Nombre, Matricula, Carrera, NumeroContacto, Problemas, Solucion, NombreModeloEquipo, Responsable, FechaActual, FechaEntrega FROM EquipoServicio", connection);
+                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT Id, Nombre, Matricula, Carrera, Contacto, Problemas, Solucion, Equipo, Responsable, FechaActual, FechaEntrega FROM EquipoServicio", connection);
 
                     // Crear DataTable para almacenar los datos
                     DataTable table = new DataTable();
@@ -117,7 +129,7 @@ namespace Proyecto_Infotec
                             //NumeroContacto = Convert.ToString(row["NumeroContacto"]),
                             Problemas = Convert.ToString(row["Problemas"]),
                             Solucion = Convert.ToString(row["Solucion"]),
-                            NombreModeloEquipo = Convert.ToString(row["NombreModeloEquipo"]),
+                            Equipo = Convert.ToString(row["Equipo"]),
                             Responsable = Convert.ToString(row["Responsable"]),
                             FechaActual = Convert.ToDateTime(row["FechaActual"]),
                             FechaEntrega = Convert.ToDateTime(row["FechaEntrega"])
@@ -132,6 +144,11 @@ namespace Proyecto_Infotec
             }
 
             return equipos;
+        }
+
+        private void dgvInicio_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+           
         }
     }
 }

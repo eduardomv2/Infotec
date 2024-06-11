@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dgvInicio = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInicio)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -51,27 +52,36 @@
             // 
             this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(50)))));
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(448, 541);
+            this.button6.ForeColor = System.Drawing.Color.White;
+            this.button6.Location = new System.Drawing.Point(447, 549);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(120, 29);
             this.button6.TabIndex = 4;
             this.button6.Text = "GUARDAR DATOS";
-            this.button6.UseVisualStyleBackColor = true;
+            this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // dataGridView1
+            // dgvInicio
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvInicio.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.dataGridView1.CausesValidation = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 66);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(960, 469);
-            this.dataGridView1.TabIndex = 3;
+            this.dgvInicio.BackgroundColor = System.Drawing.Color.LightGray;
+            this.dgvInicio.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvInicio.CausesValidation = false;
+            this.dgvInicio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvInicio.GridColor = System.Drawing.Color.White;
+            this.dgvInicio.Location = new System.Drawing.Point(12, 66);
+            this.dgvInicio.Name = "dgvInicio";
+            this.dgvInicio.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.dgvInicio.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvInicio.Size = new System.Drawing.Size(960, 469);
+            this.dgvInicio.TabIndex = 3;
+            this.dgvInicio.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvInicio_CellFormatting);
             // 
             // Inicio
             // 
@@ -81,11 +91,11 @@
             this.ClientSize = new System.Drawing.Size(984, 590);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button6);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvInicio);
             this.Name = "Inicio";
             this.Text = "Inicio";
             this.Load += new System.EventHandler(this.Inicio_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInicio)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -95,6 +105,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvInicio;
     }
 }
