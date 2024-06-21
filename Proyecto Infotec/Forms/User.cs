@@ -28,6 +28,7 @@ namespace Proyecto_Infotec
             string usuario = Form1.LoggedInUser;
             CargarDatosUsuario(usuario);
             CargarEquiposArreglados(usuario);
+
         }
 
         #region Metodo para que se vean los datos del usuario
