@@ -29,20 +29,22 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.iconButton9 = new FontAwesome.Sharp.IconButton();
+            this.iconButton8 = new FontAwesome.Sharp.IconButton();
+            this.iconButton7 = new FontAwesome.Sharp.IconButton();
             this.iconButton6 = new FontAwesome.Sharp.IconButton();
             this.iconButton5 = new FontAwesome.Sharp.IconButton();
             this.iconButton4 = new FontAwesome.Sharp.IconButton();
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.iconButton9 = new FontAwesome.Sharp.IconButton();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            this.iconButton8 = new FontAwesome.Sharp.IconButton();
-            this.iconButton7 = new FontAwesome.Sharp.IconButton();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,6 +64,95 @@
             this.panel1.Size = new System.Drawing.Size(202, 593);
             this.panel1.TabIndex = 3;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.iconPictureBox1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(202, 161);
+            this.panel2.TabIndex = 4;
+            // 
+            // panel3
+            // 
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(202, 25);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(982, 568);
+            this.panel3.TabIndex = 4;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(35)))), ((int)(((byte)(98)))));
+            this.panel4.Controls.Add(this.iconButton9);
+            this.panel4.Controls.Add(this.iconButton8);
+            this.panel4.Controls.Add(this.iconButton7);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(202, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(982, 25);
+            this.panel4.TabIndex = 0;
+            // 
+            // iconButton9
+            // 
+            this.iconButton9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconButton9.BackColor = System.Drawing.Color.Transparent;
+            this.iconButton9.BackgroundImage = global::Proyecto_Infotec.Properties.Resources.minimizar;
+            this.iconButton9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.iconButton9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButton9.FlatAppearance.BorderSize = 0;
+            this.iconButton9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton9.ForeColor = System.Drawing.Color.Transparent;
+            this.iconButton9.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconButton9.IconColor = System.Drawing.Color.Black;
+            this.iconButton9.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton9.Location = new System.Drawing.Point(913, 4);
+            this.iconButton9.Name = "iconButton9";
+            this.iconButton9.Size = new System.Drawing.Size(20, 19);
+            this.iconButton9.TabIndex = 2;
+            this.iconButton9.UseVisualStyleBackColor = false;
+            this.iconButton9.Click += new System.EventHandler(this.iconButton9_Click);
+            // 
+            // iconButton8
+            // 
+            this.iconButton8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconButton8.BackColor = System.Drawing.Color.Transparent;
+            this.iconButton8.BackgroundImage = global::Proyecto_Infotec.Properties.Resources.boton_de_cruz;
+            this.iconButton8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.iconButton8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButton8.FlatAppearance.BorderSize = 0;
+            this.iconButton8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton8.ForeColor = System.Drawing.Color.Transparent;
+            this.iconButton8.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconButton8.IconColor = System.Drawing.Color.Black;
+            this.iconButton8.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton8.Location = new System.Drawing.Point(954, 6);
+            this.iconButton8.Name = "iconButton8";
+            this.iconButton8.Size = new System.Drawing.Size(16, 14);
+            this.iconButton8.TabIndex = 1;
+            this.iconButton8.UseVisualStyleBackColor = false;
+            this.iconButton8.Click += new System.EventHandler(this.iconButton8_Click);
+            // 
+            // iconButton7
+            // 
+            this.iconButton7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconButton7.BackColor = System.Drawing.Color.Transparent;
+            this.iconButton7.BackgroundImage = global::Proyecto_Infotec.Properties.Resources.redimensionar;
+            this.iconButton7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.iconButton7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButton7.FlatAppearance.BorderSize = 0;
+            this.iconButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton7.ForeColor = System.Drawing.Color.Transparent;
+            this.iconButton7.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconButton7.IconColor = System.Drawing.Color.Black;
+            this.iconButton7.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton7.Location = new System.Drawing.Point(936, 8);
+            this.iconButton7.Name = "iconButton7";
+            this.iconButton7.Size = new System.Drawing.Size(12, 12);
+            this.iconButton7.TabIndex = 0;
+            this.iconButton7.UseVisualStyleBackColor = false;
+            this.iconButton7.Click += new System.EventHandler(this.iconButton7_Click);
             // 
             // iconButton6
             // 
@@ -206,40 +297,11 @@
             this.iconButton1.UseVisualStyleBackColor = false;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.iconButton9);
-            this.panel2.Controls.Add(this.iconPictureBox1);
-            this.panel2.Controls.Add(this.iconButton8);
-            this.panel2.Controls.Add(this.iconButton7);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(202, 161);
-            this.panel2.TabIndex = 4;
-            // 
-            // iconButton9
-            // 
-            this.iconButton9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButton9.BackColor = System.Drawing.Color.Transparent;
-            this.iconButton9.BackgroundImage = global::Proyecto_Infotec.Properties.Resources.minimizar;
-            this.iconButton9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.iconButton9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton9.FlatAppearance.BorderSize = 0;
-            this.iconButton9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton9.ForeColor = System.Drawing.Color.Transparent;
-            this.iconButton9.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton9.IconColor = System.Drawing.Color.Black;
-            this.iconButton9.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton9.Location = new System.Drawing.Point(135, 8);
-            this.iconButton9.Name = "iconButton9";
-            this.iconButton9.Size = new System.Drawing.Size(20, 19);
-            this.iconButton9.TabIndex = 2;
-            this.iconButton9.UseVisualStyleBackColor = false;
-            this.iconButton9.Click += new System.EventHandler(this.iconButton9_Click);
-            // 
             // iconPictureBox1
             // 
+            this.iconPictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.iconPictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.iconPictureBox1.BackgroundImage = global::Proyecto_Infotec.Properties.Resources.registro;
             this.iconPictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -249,63 +311,15 @@
             this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.None;
             this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.IconSize = 96;
+            this.iconPictureBox1.IconSize = 122;
             this.iconPictureBox1.InitialImage = global::Proyecto_Infotec.Properties.Resources.estrella;
-            this.iconPictureBox1.Location = new System.Drawing.Point(51, 33);
+            this.iconPictureBox1.Location = new System.Drawing.Point(40, 16);
             this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Size = new System.Drawing.Size(98, 96);
+            this.iconPictureBox1.Size = new System.Drawing.Size(126, 122);
             this.iconPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.iconPictureBox1.TabIndex = 3;
             this.iconPictureBox1.TabStop = false;
             this.iconPictureBox1.Click += new System.EventHandler(this.iconPictureBox1_Click);
-            // 
-            // iconButton8
-            // 
-            this.iconButton8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButton8.BackColor = System.Drawing.Color.Transparent;
-            this.iconButton8.BackgroundImage = global::Proyecto_Infotec.Properties.Resources.boton_de_cruz;
-            this.iconButton8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.iconButton8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton8.FlatAppearance.BorderSize = 0;
-            this.iconButton8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton8.ForeColor = System.Drawing.Color.Transparent;
-            this.iconButton8.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton8.IconColor = System.Drawing.Color.Black;
-            this.iconButton8.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton8.Location = new System.Drawing.Point(177, 8);
-            this.iconButton8.Name = "iconButton8";
-            this.iconButton8.Size = new System.Drawing.Size(16, 14);
-            this.iconButton8.TabIndex = 1;
-            this.iconButton8.UseVisualStyleBackColor = false;
-            this.iconButton8.Click += new System.EventHandler(this.iconButton8_Click);
-            // 
-            // iconButton7
-            // 
-            this.iconButton7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButton7.BackColor = System.Drawing.Color.Transparent;
-            this.iconButton7.BackgroundImage = global::Proyecto_Infotec.Properties.Resources.redimensionar;
-            this.iconButton7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.iconButton7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton7.FlatAppearance.BorderSize = 0;
-            this.iconButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton7.ForeColor = System.Drawing.Color.Transparent;
-            this.iconButton7.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton7.IconColor = System.Drawing.Color.Black;
-            this.iconButton7.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton7.Location = new System.Drawing.Point(159, 10);
-            this.iconButton7.Name = "iconButton7";
-            this.iconButton7.Size = new System.Drawing.Size(12, 12);
-            this.iconButton7.TabIndex = 0;
-            this.iconButton7.UseVisualStyleBackColor = false;
-            this.iconButton7.Click += new System.EventHandler(this.iconButton7_Click);
-            // 
-            // panel3
-            // 
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(202, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(982, 593);
-            this.panel3.TabIndex = 4;
             // 
             // Registros
             // 
@@ -314,6 +328,7 @@
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.ClientSize = new System.Drawing.Size(1184, 593);
             this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Registros";
@@ -324,6 +339,7 @@
             this.Load += new System.EventHandler(this.Registros_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -343,5 +359,6 @@
         private FontAwesome.Sharp.IconButton iconButton7;
         private FontAwesome.Sharp.IconButton iconButton9;
         private FontAwesome.Sharp.IconButton iconButton8;
+        private System.Windows.Forms.Panel panel4;
     }
 }

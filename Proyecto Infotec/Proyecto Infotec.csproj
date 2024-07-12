@@ -255,5 +255,14 @@
   <ItemGroup>
     <None Include="Resources\Diseño sin título %2811%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Diseño sin título %2813%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Diseño sin título %2814%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Diseño sin título %2815%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

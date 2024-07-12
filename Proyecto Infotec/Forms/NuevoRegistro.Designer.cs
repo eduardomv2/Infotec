@@ -282,7 +282,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(35)))), ((int)(((byte)(98)))));
-            this.ClientSize = new System.Drawing.Size(966, 571);
+            this.ClientSize = new System.Drawing.Size(982, 568);
             this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.txtCarrera);
@@ -306,6 +306,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "NuevoRegistro";
             this.Text = "NuevoRegistro";
             this.Load += new System.EventHandler(this.NuevoRegistro_Load);
